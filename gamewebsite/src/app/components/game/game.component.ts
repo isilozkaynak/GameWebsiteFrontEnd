@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Game } from 'src/app/models/game';
+import { GameService } from 'src/app/services/game.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-game',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  constructor() { }
+  games: Game[] = [];
+  dataLoaded = false;
+
+  constructor(private gameService: GameService) { }
 
   ngOnInit(): void {
+    this.getGames();
+  }
+
+  getGames() {
+    this.gameService.getProducts().subscribe(response => {
+      this.games = response.data
+      this.dataLoaded = true;
+    });
   }
 
 }

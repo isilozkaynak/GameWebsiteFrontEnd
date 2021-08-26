@@ -1,1 +1,20 @@
-<p>game works!</p>
+<div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<table *ngIf="dataLoaded==true" class="table">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Oyun İsmi</th>
+      <th>Açıklama</th>
+      <th>Yayın Tarihi</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let game of games">
+    <td>{{game.gameId}}</td>
+    <td>{{game.gameName}}</td>
+    <td>{{game.descriptions}}</td>
+    <td>{{game.releaseDate}}</td>
+  </tr>
+</table>
+

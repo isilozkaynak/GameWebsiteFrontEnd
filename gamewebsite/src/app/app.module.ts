@@ -3,12 +3,24 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductComponent } from './components/product/product.component';
+import { GameComponent } from './components/game/game.component';
+import { CategoryComponent } from './components/category/category.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { OrderComponent } from './components/order/order.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductComponent,
+    GameComponent,
+    CategoryComponent,
+    CustomerComponent,
+    OrderComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule
   ],

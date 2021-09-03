@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { GameResponseModel } from '../models/gameResponseModel';
 import { Observable } from 'rxjs';
+import { Game } from '../models/game';
+import { ListResponseModel } from '../models/listResponseModel';
 
 
 @Injectable({
@@ -12,7 +13,7 @@ export class GameService {
   apiUrl = "https://localhost:44365/api/games/getall";
   constructor(private httpClient: HttpClient) { }
 
-  getProducts() :Observable<GameResponseModel> {
-    return this.httpClient.get<GameResponseModel>(this.apiUrl);
-}
+  getProducts(): Observable<ListResponseModel<Game>> {
+    return this.httpClient.get<ListResponseModel<Game>>(this.apiUrl);
+  }
 }

@@ -1,19 +1,12 @@
 <div class="container">
   <div class="row">
-    <app-product></app-product>
-  </div>
-  <div class="row">
-    <!--<app-category></app-category> -->
-  </div>
-  <div class="row">
-    <app-game></app-game>
-  </div>
-  <div class="row">
-    <app-customer></app-customer>
-  </div>
-  <div class="row">
-    <app-order></app-order>
+    <div class="col-md-3">
+      <app-category></app-category>
+    </div>
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
 
-<router-outlet></router-outlet>
+

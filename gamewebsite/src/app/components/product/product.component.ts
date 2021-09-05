@@ -21,6 +21,9 @@ export class ProductComponent implements OnInit {
       if(params["categoryId"]){
         this.getProductsByCategory(params["categoryId"]);
       }
+      if(params["gameId"]){
+        this.getProductsByGame(params["gameId"]);
+      }
       else {
         this.getProducts();
       }
@@ -36,6 +39,13 @@ export class ProductComponent implements OnInit {
 
   getProductsByCategory(categoryId:number) {
     this.productService.getProductsByCategory(categoryId).subscribe(response=>{
+      this.products = response.data
+      this.dataLoaded = true;
+    })
+  }
+
+  getProductsByGame(gameId:number) {
+    this.productService.getProductsByGame(gameId).subscribe(response=>{
       this.products = response.data
       this.dataLoaded = true;
     })

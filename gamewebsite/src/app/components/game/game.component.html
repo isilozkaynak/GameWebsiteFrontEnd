@@ -1,4 +1,4 @@
-<div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
+<!--<div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
 <table *ngIf="dataLoaded==true" class="table">
@@ -16,5 +16,13 @@
     <td>{{game.descriptions}}</td>
     <td>{{game.releaseDate}}</td>
   </tr>
-</table>
+</table>  -->
+
+<ul class="list-group">
+  <li (click)="setCurrentGame(game)"
+  routerLink = "/products/game/{{game.gameId}}"
+  *ngFor="let game of games"
+  [class]="getCurrentGameClass(game)">
+  {{game.gameName}}</li>
+</ul>
 

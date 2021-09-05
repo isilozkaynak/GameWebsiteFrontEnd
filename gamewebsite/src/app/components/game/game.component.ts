@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class GameComponent implements OnInit {
 
   games: Game[] = [];
+  currentGame : Game;
   dataLoaded = false;
 
   constructor(private gameService: GameService) { }
@@ -24,6 +25,20 @@ export class GameComponent implements OnInit {
       this.games = response.data
       this.dataLoaded = true;
     });
+  }
+
+
+  setCurrentGame(game:Game){
+    this.currentGame = game;
+  }
+
+  getCurrentGameClass(game:Game){
+    if(game==this.currentGame){
+      return "list-group-item active";
+    }
+    else {
+      return "list-group-item";
+    }
   }
 
 }

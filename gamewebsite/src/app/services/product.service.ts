@@ -21,4 +21,9 @@ export class ProductService {
     let newPath = this.apiUrl + "products/getbycategory?categoryId=" + categoryId;
     return this.httpClient.get<ListResponseModel<Product>>(newPath);
   }
+
+  getProductsByGame(gameId: number): Observable<ListResponseModel<Product>> {
+    let newPath = this.apiUrl + "products/getbygame?gameId=" + gameId;
+    return this.httpClient.get<ListResponseModel<Product>>(newPath);
+  }
 }

@@ -8,6 +8,8 @@
       <th>Ürün Adı</th>
       <th>Kategori</th>
       <th>Fiyat</th>
+      <th>Game Adı</th>
+      <th>Yayın Tarihi</th>
     </tr>
   </thead>
   <tr *ngFor="let product of products">
@@ -15,5 +17,7 @@
     <td>{{product.productName}}</td>
     <td>{{product.categoryId}}</td>
     <td>{{product.unitPrice}}</td>
+    <td>{{product.gameId}}</td>
+    <td>{{product.releaseDate}}</td>
   </tr>
 </table>

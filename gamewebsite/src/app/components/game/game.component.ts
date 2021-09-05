@@ -20,7 +20,7 @@ export class GameComponent implements OnInit {
   }
 
   getGames() {
-    this.gameService.getProducts().subscribe(response => {
+    this.gameService.getGames().subscribe(response => {
       this.games = response.data
       this.dataLoaded = true;
     });

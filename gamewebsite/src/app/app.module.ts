@@ -9,6 +9,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { OrderComponent } from './components/order/order.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NaviComponent } from './components/navi/navi.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     GameComponent,
     CategoryComponent,
     CustomerComponent,
-    OrderComponent
+    OrderComponent,
+    NaviComponent
   ],
   imports: [
     HttpClientModule,

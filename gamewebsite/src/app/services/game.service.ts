@@ -13,7 +13,7 @@ export class GameService {
   apiUrl = "https://localhost:44365/api/games/getall";
   constructor(private httpClient: HttpClient) { }
 
-  getProducts(): Observable<ListResponseModel<Game>> {
+  getGames(): Observable<ListResponseModel<Game>> {
     return this.httpClient.get<ListResponseModel<Game>>(this.apiUrl);
   }
 }

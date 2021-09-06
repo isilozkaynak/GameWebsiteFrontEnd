@@ -12,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductComponent implements OnInit {
 
   products: Product[] = [];
+  product : Product;
   dataLoaded = false;
 
   constructor(private productService : ProductService, private activatedRoot : ActivatedRoute) {  }

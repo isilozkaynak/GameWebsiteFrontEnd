@@ -10,6 +10,7 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { OrderComponent } from './components/order/order.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NaviComponent } from './components/navi/navi.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NaviComponent } from './components/navi/navi.component';
     CategoryComponent,
     CustomerComponent,
     OrderComponent,
-    NaviComponent
+    NaviComponent,
+    ProductDetailComponent
   ],
   imports: [
     HttpClientModule,

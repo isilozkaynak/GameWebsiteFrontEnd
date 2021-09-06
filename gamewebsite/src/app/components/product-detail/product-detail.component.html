@@ -1,0 +1,45 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button *ngFor="let image of productImages; let i = index" type="button" data-bs-target="#carouselExampleIndicators"
+      attr.data-bs-slide-to="{{ i }}" [class]="getButtonClass(image)" aria-current="true" aria-label="Slide 1"></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div *ngFor="let image of productImages" [class]="getCurrentImageClass(image)">
+      <img src="{{getPath()+image.imagePath}}" class="d-block w-100" width="700" height="520" alt="Image">
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="table-responsive-md">
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Ürün Adı</th>
+        <th>Kategori</th>
+        <th>Fiyat</th>
+        <th>Game Adı</th>
+        <th>Yayın Tarihi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{product.productId}}</td>
+        <td>{{product.productName}}</td>
+        <td>{{product.categoryId}}</td>
+        <td>{{product.unitPrice}}</td>
+        <td>{{product.gameId}}</td>
+        <td>{{product.releaseDate}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

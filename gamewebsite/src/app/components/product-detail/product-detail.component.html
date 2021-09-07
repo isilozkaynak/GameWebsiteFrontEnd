@@ -1,4 +1,99 @@
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<br><br>
+
+<div class="row">
+    <div *ngIf="product" id="carouselExampleDark" class="carousel carousel-dark slide col-md-7" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+                <img *ngIf="product.productImage.length==0 " [src]="imgUrl + defaultImage " class="d-block w-100 " alt="... ">
+                <img *ngIf="product.productImage.length !=0 " [src]="imgUrl + product.productImage[0].imagePath " class="d-block w-100 " alt="... ">
+            </div>
+            <div *ngIf="product.productImage.length > 1" class="carousel-item" data-bs-interval="2000">
+                <img [src]="imgUrl + product.productImage[1].imagePath " class="d-block w-100 " alt="... ">
+            </div>
+            <div *ngIf="product.productImage.length > 2" class="carousel-item">
+                <img [src]="imgUrl + product.productImage[2].imagePath " class="d-block w-100 " alt="... ">
+            </div>
+            <div *ngIf="product.productImage.length > 3" class="carousel-item">
+                <img [src]="imgUrl + product.productImage[3].imagePath " class="d-block w-100 " alt="... ">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+    </div>
+    <div *ngIf="product" class="m-auto col-md-4">
+        <div class=" row">
+
+            <h2 class="d-flex tittle">{{product.productName}} {{product.gameId}}</h2>
+            <a style="margin-top:-7px; margin-bottom: 8px;" href="/products/category/{{product.categoryId}}">{{product.categoryId}}</a>
+            <span class="border border-secondary propf5"><b>Fiyat :</b> {{product.unitPrice}}</span>
+            <span class="border border-success propf9"><b>Yayın Tarihi :</b> {{product.releaseDate}}</span>
+            <!--<span class="border border-danger propf7"><b>YAKIT TÜRÜ :</b> {{car.fuelType}}</span>
+            <span class="border border-warning propf7"><b>VİTES TİPİ :</b> {{car.gearType}}</span>
+            <span class="border border-info propf9"><b>MOTOR GÜCÜ :</b> {{car.enginePower}}</span>-->
+
+            <div class="container mt-3" style="border: 1px solid gray;">
+                {{product.descriptionProduct}}
+            </div>
+            <hr style="margin-top: 25px;">
+
+            <!--<div class="discount">
+                <h6>Bu haftaya Özel indirimi</h6>
+                <h2>KAÇIRMA!</h2>
+            </div>
+            <span class="dprice">{{car.dailyPrice*1.2 | currency: "TRY":"₺":"3.2-2"}}</span>
+            <span class="price"><b>{{car.dailyPrice | currency: "TRY":"₺":"3.2-2"}}</b></span>
+            <button type="button" class="btn btn-danger w-50 ">
+                <a class="nav-link" (click)="addToFavorite(product)" role="button" type="button"  title="Favorilerime ekle">
+                <i class="fa fa-heart" style="color: rgb(226, 145, 145);" aria-hidden="true"><span class="text-light"> Favorilerime ekle</span></i>
+            </a>
+            </button>-->
+
+            <button type="button" class="btn btn-dark w-50" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa fa-handshake" style="color: #d8c8c8;" aria-hidden="true"> <span class="text-light"> Satın Al</span></i>
+              </button>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <h3 class="text-center">En Çok Satanlar</h3>
+    <div *ngFor="let product of products | slice:2:7" class="m-auto mt-3 col-md-3 card" style="width: 15rem; height: 350px;">
+        <img *ngIf="product.productImage.length == 0" class="card-img-top" alt="Image" width="100" height="100" style="object-fit: cover;" [src]="imgUrl + defaultImage">
+        <img *ngIf="product.productImage.length != 0" class="card-img-top" alt="Image" width="100" height="100" style="object-fit: contain;" [src]="imgUrl + product.productImage[0].imagePath ">
+
+
+        <div class="card-body">
+            <h5 class="text-center card-title ">{{product.productName}}</h5>
+        </div>
+        <ul class="list-group list-group-flush ">
+            <li class="text-center list-group-item "><span class="discountt">{{product.unitPrice*1.2 | currency: "TRY":"₺":"3.2-2"}}
+            </span><br> {{product.unitPrice | currency: "TRY":"₺":"3.2-2"}}</li>
+        </ul>
+        <div class="text-center card-body">
+            <a href="detail/{{product.productId}}" class="btn btn-dark">DETAY</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button *ngFor="let image of productImages; let i = index" type="button" data-bs-target="#carouselExampleIndicators"
       attr.data-bs-slide-to="{{ i }}" [class]="getButtonClass(image)" aria-current="true" aria-label="Slide 1"></button>
@@ -10,6 +105,7 @@
     </div>
   </div> <!--src="{{getPath()+image.imagePath}}"-->
 
+  <!--
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -33,6 +129,8 @@
     </thead>
     <tbody>
       <!--<tr *ngFor="let product of products">-->
+
+        <!--
       <td>{{product.productId}}</td>
       <td>{{product.productName}}</td>
       <td>{{product.categoryId}}</td>
@@ -42,7 +140,8 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div>  -->
+
 
 
 

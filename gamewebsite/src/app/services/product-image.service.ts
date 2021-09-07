@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+/*import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';
@@ -15,4 +15,4 @@ export class ProductImageService {
     let newPath = this.apiUrl + "productimages/getimagesbyproductid?productId="+productId
     return this.httpClient.get<ListResponseModel<ProductImage>>(newPath)
   }
-}
+} */

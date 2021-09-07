@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { ProductImage } from 'src/app/models/productImage';
-import { ProductDetailService } from 'src/app/services/product-detail.service';
+/*import { ProductDetailService } from 'src/app/services/product-detail.service'; */
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -13,21 +13,36 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductDetailComponent implements OnInit {
 
   basePath = "https://localhost:44365";
-  products: Product[];
+  products: Product[]=[];
+  product:Product;
   productImages: ProductImage[];
   currentImage:ProductImage;
+  imgUrl ="https://localhost:44365/";
+  defaultImage="images/default.JPG";
 
-  constructor(private productService:ProductService, private router: Router, private productDetailService:ProductDetailService, private activatedRoute:ActivatedRoute) { }
+  constructor(private productService:ProductService, private router: Router, private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
+      this.getProductDetails();
       if (params["productId"]) {
-        this.getProductDetail(params["productId"]);
-        this.getProductImage(params["productId"]);
+        this.getProductDetailsByProductId(params["productId"]);
       }
     })
   }
 
+  getProductDetails(){
+    this.productService.getProductDetails().subscribe(response => {
+    this.products = response.data;
+    })
+  }
+  getProductDetailsByProductId(productId:number){
+    this.productService.getProductDetailsByProductId(productId).subscribe(response =>{
+      this.product = response.data[0]
+    })
+  }
+
+  /*
   getProductImage(productId:number){
     this.productDetailService.getProductImageByProductId(productId).subscribe(response=>{
       this.productImages = response.data
@@ -71,7 +86,7 @@ export class ProductDetailComponent implements OnInit {
   setCurrentImageClass(image:ProductImage){
     this.currentImage = image;
   }
-
+*/
 
 
 }

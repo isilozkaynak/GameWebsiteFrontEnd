@@ -6,9 +6,9 @@
 
   <div class="carousel-inner">
     <div *ngFor="let image of productImages" [class]="getCurrentImageClass(image)">
-      <img src="{{getPath()+image.imagePath}}" class="d-block w-100" width="700" height="520" alt="Image">
+      <img src="getPath()+image.imagePath" class="d-block w-100" width="700" height="520" alt="Image">
     </div>
-  </div>
+  </div> <!--src="{{getPath()+image.imagePath}}"-->
 
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -32,14 +32,20 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of products">
-        <td>{{product.productId}}</td>
-        <td>{{product.productName}}</td>
-        <td>{{product.categoryId}}</td>
-        <td>{{product.unitPrice}}</td>
-        <td>{{product.gameId}}</td>
-        <td>{{product.releaseDate}}</td>
+      <!--<tr *ngFor="let product of products">-->
+      <td>{{product.productId}}</td>
+      <td>{{product.productName}}</td>
+      <td>{{product.categoryId}}</td>
+      <td>{{product.unitPrice}}</td>
+      <td>{{product.gameId}}</td>
+      <td>{{product.releaseDate}}</td>
       </tr>
     </tbody>
   </table>
 </div>
+
+
+
+
+
+

@@ -1,3 +1,106 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 *ngIf="product" class="modal-title" id="exampleModalLabel">
+                  {{ product.productName }} {{ product.gameId }} | Satın Al <!--Kirala y erine Satın Al-->
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <div *ngIf="product" class="form-group row mb-2">
+                  <label for="example-date-input" class="col-4 col-form-label">Günlük tutar</label
+        >
+        <div class="col-8">
+          <input
+            type="text"
+            disabled="disabled"
+            class="form-control"
+            value="{{ product.unitPrice | currency: '₺' }}"
+          />
+        </div>
+      </div>
+      <div>
+        <form [formGroup]="orderAddForm">
+          <div class="form-group row mb-2" style="display: none">
+            <label for="userId" class="col-4 col-form-label">Satın alan</label>
+
+                  <div class="col-8">
+                      <input id="userId" formControlName="userId" type="text" class="form-control" [value]="user.userId" [ngModel]="user.userId" />
+                  </div>
+              </div>
+
+              <div class="form-group row mb-2" style="display: none">
+                  <label for="productId" class="col-4 col-form-label">Oyun</label>
+                  <div class="col-8">
+                      <input *ngIf="product" id="productId" formControlName="productId" type="text" class="form-control" [value]="product.productId" [ngModel]="product.productId" />
+                  </div>
+              </div>
+
+              <div class="form-group row mb-2">
+                  <label for="rentDate" class="col-4 col-form-label">Başlangıç</label>
+
+            <!-- <div class="col-8">
+              <input
+                (change)="onChangeEvent($event)"
+                min="{{ getRentMinDate() }}"
+                [(ngModel)]="rentDate"
+                type="date"
+                class="form-control"
+                id="rentDate"
+                formControlName="rentDate"
+                placeholder="Bir gün seçiniz."
+              />
+            </div> -->
+          </div>
+
+          <!--<div class="form-group row">
+            <label for="returnDate" class="col-4 col-form-label">Bitiş</label>
+                  <div class="col-8">
+                      <input min="{{ getReturnMinDate() }}" max="{{ getReturnMaxDate() }}" [(ngModel)]="returnDate" type="date" class="form-control" id="returnDate" formControlName="returnDate" placeholder="Bir gün seçiniz." />
+                  </div>
+              </div> -->
+              </form>
+          </div>
+      </div>
+      <div class="form-group row mb-2 mt-2"> <!-- *ngIf="returnDate" silindi-->
+          <label for="example-date-input" class="col-4 col-form-label">
+        Toplam tutar</label
+      >
+      <div class="col-8"> <!--car-->
+        <input
+          *ngIf="product"
+          type="text"
+          disabled="disabled"
+          class="form-control"
+          value="{{ product.unitPrice | currency: '₺' }}"
+        />
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        Kapat
+      </button>
+      <button
+        *ngIf="product"
+        (click)="addOrder()"
+        data-bs-dismiss="modal"
+        type="button"
+        class="btn btn-primary">
+        Ödemeye geç <!--addRental()-->
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+<!--
 <div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
@@ -14,4 +117,4 @@
     <td>{{order.customerId}}</td>
     <td>{{order.orderDate}}</td>
   </tr>
-</table>
+</table> -->

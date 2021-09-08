@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ItemResponseModel } from '../models/itemResponseModel';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Product } from '../models/product';
 
@@ -38,4 +39,10 @@ export class ProductService {
     let newPath = this.apiUrl + "products/getbygame?gameId=" + gameId;
     return this.httpClient.get<ListResponseModel<Product>>(newPath);
   }
+
+  getProductDetailsByProductIdSingle(id:number):Observable<ItemResponseModel<Product>>{
+    let newPath = this.apiUrl + "getbyproductid?id="+id
+    return this.httpClient.get<ItemResponseModel<Product>>(newPath)
+  }
+
 }

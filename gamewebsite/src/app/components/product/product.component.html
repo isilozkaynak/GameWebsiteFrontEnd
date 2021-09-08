@@ -13,60 +13,31 @@
 </div>
 
 
-<table *ngIf="dataLoaded==true" class="table">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Ürün Adı</th>
-      <th>Kategori</th>
-      <th>Fiyat</th>
-      <th>KDV'li Fiyat</th>
-      <th>Game Adı</th>
-      <th>Yayın Tarihi</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let product of products | filterPipe : filterText">
-      <td>{{product.productId}}</td>
-      <td>{{product.productName | uppercase}}</td>
-      <td>{{product.categoryId}}</td>
-      <td>{{product.unitPrice | currency}}</td>
-      <td>{{product.unitPrice | vatAdded:18 | currency}}</td>
-      <td>{{product.gameId}}</td>
-      <td>{{product.releaseDate}}</td>
-      <td><i class="fas fa-edit btn btn-success" routerLink="/products/detail/{{product.productId}}">Detay</i></td>
-      <td><button (click)="addToCart(product)" type="button" class="btn btn-success">Sepete ekle</button></td>
-    </tr>
-  </tbody>
-</table>
-
-
-<!--
-<table class="table">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Ürün Adı</th>
-      <th>Kategori</th>
-      <th>Fiyat</th>
-      <th>Game Adı</th>
-      <th>Yayın Tarihi</th>
-      <th></th>
-    </tr>
-  </thead>
-  <div *ngIf="dataLoaded==false" class="spinner-grow text-secondary" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-  <tr>
-    *ngFor="let product of products">
-    <td>{{product.productId}}</td>
-    <td>{{product.productName}}</td>
-    <td>{{product.categoryId}}</td>
-    <td>{{product.unitPrice}}</td>
-    <td>{{product.gameId}}</td>
-    <td>{{product.releaseDate}}</td>
-    <td><i class="fas fa-edit btn btn-success" routerLink="/products/productDetail/{{product.productId}}"></i></td>
-  </tr>
-</table>  -->
+  <table *ngIf="dataLoaded==true" class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Ürün Adı</th>
+        <th>Kategori</th>
+        <th>Fiyat</th>
+        <th>KDV'li Fiyat</th>
+        <th>Game Adı</th>
+        <th>Yayın Tarihi</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products | filterPipe : filterText">
+        <td>{{product.productId}}</td>
+        <td>{{product.productName | uppercase}}</td>
+        <td>{{product.categoryId}}</td>
+        <td>{{product.unitPrice | currency}}</td>
+        <td>{{product.unitPrice | vatAdded:18 | currency}}</td>
+        <td>{{product.gameId}}</td>
+        <td>{{product.releaseDate}}</td>
+        <td><i class="fas fa-edit btn btn-success" routerLink="/products/detail/{{product.productId}}">Detay</i></td>
+        <td><button (click)="addToCart(product)" type="button" class="btn btn-success">Sepete ekle</button></td>
+      </tr>
+    </tbody>
+  </table>

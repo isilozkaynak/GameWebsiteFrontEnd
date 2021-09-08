@@ -1,5 +1,7 @@
 export interface Order{
-  Id:number,
+  orderId:number,
   customerId:number,
-  dateTime:any
+  orderDate:any,
+  productId:number,
+  userId:number,
 }

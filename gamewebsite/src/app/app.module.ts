@@ -18,6 +18,14 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
+import { CategoryAddComponent } from './components/category-add/category-add.component';
+import { GameAddComponent } from './components/game-add/game-add.component';
+import { CategoryUpdateComponent } from './components/category-update/category-update.component';
+import { ProductUpdateComponent } from './components/product-update/product-update.component';
+import { ProductDeleteComponent } from './components/product-delete/product-delete.component';
+import { GameDeleteComponent } from './components/game-delete/game-delete.component';
+import { GameUpdateComponent } from './components/game-update/game-update.component';
+import { CategoryDeleteComponent } from './components/category-delete/category-delete.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +42,14 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
     CartSummaryComponent,
     PaymentComponent,
     ProductAddComponent,
+    CategoryAddComponent,
+    GameAddComponent,
+    CategoryUpdateComponent,
+    ProductUpdateComponent,
+    ProductDeleteComponent,
+    GameDeleteComponent,
+    GameUpdateComponent,
+    CategoryDeleteComponent,
 
   ],
   imports: [

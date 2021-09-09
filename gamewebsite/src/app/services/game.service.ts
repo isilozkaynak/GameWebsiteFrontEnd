@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Game } from '../models/game';
 import { ListResponseModel } from '../models/listResponseModel';
 import { ResponseModel } from '../models/responseModel';
+import { ItemResponseModel } from '../models/itemResponseModel';
 
 
 @Injectable({
@@ -19,7 +20,20 @@ export class GameService {
     return this.httpClient.get<ListResponseModel<Game>>(newPath);
   }
 
+  getByGameId(gameId:number): Observable<ItemResponseModel<Game>> {
+    let newPath = this.apiUrl + "games/getbyid?gameId="+gameId;
+    return this.httpClient.get<ItemResponseModel<Game>>(newPath);
+  }
+
   add(game: Game): Observable<ResponseModel> {
     return this.httpClient.post<ResponseModel>(this.apiUrl + "games/add", game)
+  }
+
+  update(game: Game):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"games/update", game)
+  }
+
+  delete(game: Game):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"games/delete", game)
   }
 }

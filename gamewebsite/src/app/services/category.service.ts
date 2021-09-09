@@ -28,7 +28,7 @@ export class CategoryService {
   }
 
   delete(category: Category):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"delete", category)
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"categories/delete", category)
   }
 
   getByCategoryId(categoryId:number):Observable<ItemResponseModel<Category>>{

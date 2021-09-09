@@ -1,1 +1,46 @@
-<p>game-delete works!</p>
+<div class="content">
+  <div class="col-md-12">
+      <div class="card">
+          <div class="card-header">
+              <h5 class="title text-center">Yayıncı/Geliştirici Sil</h5>
+          </div>
+          <div class="card-body">
+              <form [formGroup]="gameDeleteForm">
+                  <div class="mb-3">
+                      <label for="gameId"><b>Silmek istediğiniz Yayıncı Id</b></label>
+                      <input type="number" id="gameId" formControlName="gameId" class="form-control" [(ngModel)]="gameId" placeholder="Yayıncı Id"/>
+                  </div>
+              </form>
+              <table class="table container">
+                  <thead>
+                      <tr>
+                          <th>Yayıncı Id</th>
+                          <th>Yayıncı Adı</th>
+                          <th>Tarihi</th>
+                          <th>Hakkında</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngIf="game">
+                          <td>{{ game.gameId }}</td>
+                          <td>{{ game.gameName }}</td>
+                          <td>{{ game.releaseDate }}</td>
+                          <td>{{ game.descriptions }}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="card-footer">
+              <!--<button class="btn btn-fill btn-dark" (click)="backToList()">
+        Geri dön
+      </button> -->
+              <button class="btn btn-fill btn-danger" style="float: right" (click)="delete()">
+        Eminim sil
+      </button>
+              <span style="float: right"><b>Bu yayıncı silinecek emin misiniz?</b></span
+      >
+    </div>
+  </div>
+</div>
+</div>
+

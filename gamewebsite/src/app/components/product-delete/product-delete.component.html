@@ -1,1 +1,42 @@
-<p>product-delete works!</p>
+<div class="content">
+  <div class="col-md-12">
+      <div class="card">
+          <div class="card-header">
+              <h5 class="title text-center">Ürün sil</h5>
+          </div>
+          <div class="card-body">
+              <form [formGroup]="productDeleteForm">
+                  <div class="mb-3">
+                      <label for="productId"><b>Silmek istediğiniz Ürün Id</b></label>
+                      <input type="number" id="productId" formControlName="productId" class="form-control" [(ngModel)]="categoryId" placeholder="Kategori Id"/>
+                  </div>
+              </form>
+              <table class="table container">
+                  <thead>
+                      <tr>
+                          <th>Ürün Id</th>
+                          <th>Ürün Adı</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngIf="category">
+                          <td>{{ category.categoryId }}</td>
+                          <td>{{ category.categoryName }}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          <div class="card-footer">
+              <!--<button class="btn btn-fill btn-dark" (click)="backToList()">
+        Geri dön
+      </button> -->
+              <button class="btn btn-fill btn-danger" style="float: right" (click)="delete()">
+        Eminim sil
+      </button>
+              <span style="float: right"><b>Bu ürün silinecek emin misiniz?</b></span
+      >
+    </div>
+  </div>
+</div>
+</div>
+

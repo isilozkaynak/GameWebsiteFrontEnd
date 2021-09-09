@@ -26,9 +26,9 @@ export class CategoryDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
+      this.createCategoryDeleteForm();
       if(params["categoryId"]){
         this.getByCategoryId(params["categoryId"])
-        this.createCategoryDeleteForm();
       }
     })
   }

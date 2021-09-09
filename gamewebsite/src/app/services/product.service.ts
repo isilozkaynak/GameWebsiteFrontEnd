@@ -47,8 +47,21 @@ export class ProductService {
     return this.httpClient.get<ItemResponseModel<Product>>(newPath)
   }
 
+  getByProductId(productId:number):Observable<ItemResponseModel<Product>>{
+    let newPath = this.apiUrl + "products/getbyproductid?productId="+productId
+    return this.httpClient.get<ItemResponseModel<Product>>(newPath)
+  }
+
   add(product:Product):Observable<ResponseModel>{
     return this.httpClient.post<ResponseModel>(this.apiUrl+"products/add",product)
+  }
+
+  update(product: Product):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"products/update", product)
+  }
+
+  delete(product: Product):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"products/delete", product)
   }
 
 }

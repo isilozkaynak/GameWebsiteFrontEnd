@@ -6,6 +6,7 @@ import { CategoryUpdateComponent } from './components/category-update/category-u
 import { GameAddComponent } from './components/game-add/game-add.component';
 import { GameDeleteComponent } from './components/game-delete/game-delete.component';
 import { GameUpdateComponent } from './components/game-update/game-update.component';
+import { LoginComponent } from './components/login/login.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
 import { ProductDeleteComponent } from './components/product-delete/product-delete.component';
@@ -30,9 +31,11 @@ const routes: Routes = [
   {path:"categories/delete", component:CategoryDeleteComponent},
 
   //game
-  {path:"games/add", component:GameAddComponent}
+  {path:"games/add", component:GameAddComponent},
   {path:"games/update", component:GameUpdateComponent},
   {path:"games/delete", component:GameDeleteComponent},
+
+  {path:"login", component:LoginComponent}
 ];
 
 @NgModule({

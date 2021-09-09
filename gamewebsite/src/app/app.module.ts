@@ -26,6 +26,7 @@ import { ProductDeleteComponent } from './components/product-delete/product-dele
 import { GameDeleteComponent } from './components/game-delete/game-delete.component';
 import { GameUpdateComponent } from './components/game-update/game-update.component';
 import { CategoryDeleteComponent } from './components/category-delete/category-delete.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { CategoryDeleteComponent } from './components/category-delete/category-d
     GameDeleteComponent,
     GameUpdateComponent,
     CategoryDeleteComponent,
+    LoginComponent,
 
   ],
   imports: [

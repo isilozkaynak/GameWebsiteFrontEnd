@@ -1,7 +1,7 @@
 <br><br>
 
 <div class="row">
-    <div *ngIf="product" id="carouselExampleDark" class="carousel carousel-dark slide col-md-7" data-bs-ride="carousel">
+    <div *ngIf="product" id="carouselExampleDark" class="carousel carousel-dark slide col-md-6" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -32,33 +32,20 @@
               <span class="visually-hidden">Next</span>
             </button>
     </div>
-    <div *ngIf="product" class="m-auto col-md-4">
+    <div *ngIf="product" class="m-auto col-md-6">
         <div class=" row">
 
-            <h2 class="d-flex tittle">{{product.productName}} {{product.gameId}}</h2>
-            <a style="margin-top:-7px; margin-bottom: 8px;" href="/products/category/{{product.categoryId}}">{{product.categoryId}}</a>
-            <span class="border border-secondary propf5"><b>Fiyat :</b> {{product.unitPrice}}</span>
-            <span class="border border-success propf9"><b>Yayın Tarihi :</b> {{product.releaseDate}}</span>
-            <!--<span class="border border-danger propf7"><b>YAKIT TÜRÜ :</b> {{car.fuelType}}</span>
-            <span class="border border-warning propf7"><b>VİTES TİPİ :</b> {{car.gearType}}</span>
-            <span class="border border-info propf9"><b>MOTOR GÜCÜ :</b> {{car.enginePower}}</span>-->
+            <h2 class="d-flex tittle">{{product.productName}} </h2>
+            <span *ngIf="productDetail">Kategori : <a style="margin-top:-7px; margin-bottom: 8px;" href="/products/category/{{product.categoryId}}">{{productDetail.categoryName}}</a></span>
+            <span class="border border-secondary propf5"><b>Fiyat :</b> {{product.unitPrice | vatAdded:18 | currency}} </span>
+            <span class="border border-secondary propf9"><b>Yayın Tarihi :</b> {{product.releaseDate}}</span>
+            <span class="border border-secondary propf9"><b>Yayıncı/Geliştirici :</b> {{product.gameId}}</span>
+
 
             <div class="container mt-3" style="border: 1px solid gray;">
-                {{product.descriptionProduct}}
+                <b>Açıklama :</b> {{product.descriptionProduct}}
             </div>
             <hr style="margin-top: 25px;">
-
-            <!--<div class="discount">
-                <h6>Bu haftaya Özel indirimi</h6>
-                <h2>KAÇIRMA!</h2>
-            </div>
-            <span class="dprice">{{car.dailyPrice*1.2 | currency: "TRY":"₺":"3.2-2"}}</span>
-            <span class="price"><b>{{car.dailyPrice | currency: "TRY":"₺":"3.2-2"}}</b></span>
-            <button type="button" class="btn btn-danger w-50 ">
-                <a class="nav-link" (click)="addToFavorite(product)" role="button" type="button"  title="Favorilerime ekle">
-                <i class="fa fa-heart" style="color: rgb(226, 145, 145);" aria-hidden="true"><span class="text-light"> Favorilerime ekle</span></i>
-            </a>
-            </button>-->
 
             <button type="button" class="btn btn-dark w-50" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <i class="fa fa-handshake" style="color: #d8c8c8;" aria-hidden="true"> <span class="text-light"> Sepete Ekle</span></i>
@@ -67,7 +54,7 @@
     </div>
 </div>
 <hr>
-<app-order></app-order>
+
 <!--
 <div class="row">
     <h3 class="text-center">En Çok Satanlar</h3>
@@ -87,8 +74,8 @@
             <a href="detail/{{product.productId}}" class="btn btn-dark">DETAY</a>
         </div>
     </div>
-</div>  -->
-
+</div>
+-->
 
 
 

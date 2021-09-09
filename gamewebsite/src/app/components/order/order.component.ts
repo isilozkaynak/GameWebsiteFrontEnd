@@ -60,6 +60,7 @@ export class OrderComponent implements OnInit {
     });
   }
 
+
   getProductDetailsByProductId(productId: number) {
     this.productService.getProductDetailsByProductIdSingle(productId).subscribe((response) => {
       this.product = response.data;

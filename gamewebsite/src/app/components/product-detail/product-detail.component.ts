@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
+import { ProductDetail } from 'src/app/models/productDetail';
 import { ProductImage } from 'src/app/models/productImage';
 /*import { ProductDetailService } from 'src/app/services/product-detail.service'; */
 import { ProductService } from 'src/app/services/product.service';
@@ -12,9 +13,10 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductDetailComponent implements OnInit {
 
-  basePath = "https://localhost:44365";
+  basePath = "https://localhost:44365/products/";
   products: Product[]=[];
   product:Product;
+  productDetail:ProductDetail;
   productImages: ProductImage[];
   currentImage:ProductImage;
   imgUrl ="https://localhost:44365/";
@@ -41,52 +43,4 @@ export class ProductDetailComponent implements OnInit {
       this.product = response.data[0]
     })
   }
-
-  /*
-  getProductImage(productId:number){
-    this.productDetailService.getProductImageByProductId(productId).subscribe(response=>{
-      this.productImages = response.data
-    })
-  }
-
-  getProductDetail(productId: number) {
-    this.productDetailService.getProductDetail(productId).subscribe(response=>{
-      this.products = response.data
-    })
-  }
-
-  getActivePhoto(index: number) {
-    if (index == 0) {
-      return "carousel-item active"
-    }
-    return "carousel-item"
-  }
-
-  getPath() {
-    return this.basePath;
-  }
-
-  getButtonClass(image:ProductImage){
-    if (image=this.productImages[0]) {
-      return "active";
-    }
-    else{
-      return "";
-    }
-  }
-
-  getCurrentImageClass(image:ProductImage){
-    if(this.productImages[0]==image){
-      return "carousel-item active";
-    } else {
-      return "carousel-item ";
-    }
-  }
-
-  setCurrentImageClass(image:ProductImage){
-    this.currentImage = image;
-  }
-*/
-
-
 }

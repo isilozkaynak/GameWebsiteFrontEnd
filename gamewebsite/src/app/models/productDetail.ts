@@ -1,4 +1,4 @@
-/*export interface ProductDetail{
+export interface ProductDetail{
   productId:number,
   productName:string,
   categoryName:string,
@@ -8,4 +8,4 @@
   unitPrice:number,
   descriptions:string,
   descriptionProduct:string
-}*/
+}

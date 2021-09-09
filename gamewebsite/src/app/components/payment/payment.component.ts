@@ -17,7 +17,7 @@ export class PaymentComponent implements OnInit {
   product: Product;
   productImages: ProductImage;
   order: Order;
-  imgUrl ="https://localhost:44365/api";
+  imgUrl ="https://localhost:44365/";
   apiUrl = "https://localhost:44365/api/";
   defaultImage = "images/default.JPG";
   constructor(

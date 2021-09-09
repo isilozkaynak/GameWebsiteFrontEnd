@@ -36,7 +36,7 @@
         <td>{{product.unitPrice | vatAdded:18 | currency}}</td>
         <td>{{product.gameId}}</td>
         <td>{{product.releaseDate}}</td>
-        <td><i class="fas fa-edit btn btn-success" routerLink="/products/detail/{{product.productId}}">Detay</i></td>
+        <td  routerLink="/products/detail/{{product.productId}}"><i class="fas fa-edit btn btn-success">Detay</i></td>
         <td><button (click)="addToCart(product)" type="button" class="btn btn-success">Sepete ekle</button></td>
       </tr>
     </tbody>

@@ -8,7 +8,7 @@
               <form [formGroup]="productDeleteForm">
                   <div class="mb-3">
                       <label for="productId"><b>Silmek istediğiniz Ürün Id</b></label>
-                      <input type="number" id="productId" formControlName="productId" class="form-control" [(ngModel)]="categoryId" placeholder="Kategori Id"/>
+                      <input type="number" id="productId" formControlName="productId" class="form-control" [(ngModel)]="productId" placeholder="Oyun Id"/>
                   </div>
               </form>
               <table class="table container">
@@ -19,9 +19,9 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <tr *ngIf="category">
-                          <td>{{ category.categoryId }}</td>
-                          <td>{{ category.categoryName }}</td>
+                      <tr *ngIf="product">
+                          <td>{{ product.productId }}</td>
+                          <td>{{ product.productName }}</td>
                       </tr>
                   </tbody>
               </table>

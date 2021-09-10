@@ -1,0 +1,27 @@
+<table class="table table-striped">
+  <thead class="table-dark">
+      <tr>
+          <th scope="col">Kategori Id</th>
+          <th scope="col">Kategori Adı</th>
+          <th scope="col">
+              <button class="btn btn-success" click="routerLink" routerLink="add">
+        Kategori Ekle
+      </button>
+          </th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let category of categories">
+          <th scope="row">{{ category.categoryId }}</th>
+          <td>{{ category.categoryName }}</td>
+          <td>
+              <button class="btn btn-warning" click="routerLink" routerLink="update/{{ category.categoryId }}">
+        Güncelle
+      </button>
+              <button class="btn btn-danger mx-2" click="routerLink" routerLink="delete/{{ category.categoryId }}">
+        Sil
+      </button>
+          </td>
+      </tr>
+  </tbody>
+</table>

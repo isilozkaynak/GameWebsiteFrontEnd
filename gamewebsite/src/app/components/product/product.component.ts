@@ -5,6 +5,9 @@ import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CartService } from 'src/app/services/cart.service';
+import { FavoriteService } from 'src/app/services/favorite.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { ProductImage } from 'src/app/models/productImage';
 
 @Component({
   selector: 'app-product',
@@ -13,13 +16,23 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class ProductComponent implements OnInit {
 
-  products: Product[] = [];
+  products: Product[]=[];
   product: Product;
-  dataLoaded = false;
+  dataLoaded:boolean = false;
   filterText = "";
+  productImages:ProductImage[];
 
-  constructor(private productService: ProductService, private toastrService: ToastrService,
-    private activatedRoot: ActivatedRoute, private cartService: CartService) { }
+  imgUrl ="https://localhost:44365/";
+  defaultImage="images/default.jpg";
+  welcomeImage="images/default.JPG";
+
+
+  constructor(private productService: ProductService,
+    private toastrService: ToastrService,
+    private activatedRoot: ActivatedRoute,
+    private cartService: CartService,
+    private favoriteService: FavoriteService,
+    private localstorageService: LocalStorageService,) { }
 
   ngOnInit(): void {
     this.activatedRoot.params.subscribe(params => {
@@ -59,6 +72,11 @@ export class ProductComponent implements OnInit {
       this.products = response.data
       this.dataLoaded = true;
     })
+  }
+
+  addToFavorite(product: Product) {
+    this.favoriteService.addToFavorite(product);
+
   }
 
 }

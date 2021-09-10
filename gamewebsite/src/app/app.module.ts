@@ -28,6 +28,10 @@ import { GameUpdateComponent } from './components/game-update/game-update.compon
 import { CategoryDeleteComponent } from './components/category-delete/category-delete.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { CategoryListComponent } from './components/category-list/category-list.component';
+import { GameListComponent } from './components/game-list/game-list.component';
+import { ProductFilterComponent } from './components/product-filter/product-filter.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +57,10 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     GameUpdateComponent,
     CategoryDeleteComponent,
     LoginComponent,
+    ProductListComponent,
+    CategoryListComponent,
+    GameListComponent,
+    ProductFilterComponent,
 
   ],
   imports: [

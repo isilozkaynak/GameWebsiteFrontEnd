@@ -4,7 +4,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
-import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-product-update',

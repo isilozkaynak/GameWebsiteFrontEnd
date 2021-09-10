@@ -32,6 +32,10 @@ import { ProductListComponent } from './components/product-list/product-list.com
 import { CategoryListComponent } from './components/category-list/category-list.component';
 import { GameListComponent } from './components/game-list/game-list.component';
 import { ProductFilterComponent } from './components/product-filter/product-filter.component';
+import { FavoriteSummaryComponent } from './components/favorite-summary/favorite-summary.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ProfilComponent } from './components/profil/profil.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +65,10 @@ import { ProductFilterComponent } from './components/product-filter/product-filt
     CategoryListComponent,
     GameListComponent,
     ProductFilterComponent,
+    FavoriteSummaryComponent,
+    FooterComponent,
+    ProfilComponent,
+    RegisterComponent,
 
   ],
   imports: [

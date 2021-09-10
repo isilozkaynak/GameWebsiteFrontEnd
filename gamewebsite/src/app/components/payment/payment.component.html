@@ -56,7 +56,7 @@
         </li>
       </ul>
       <br />
-      <a (click)="payment()" class="btn btn-success btn-lg btn-block" role="button">Öde</a>
+      <a (click)="payment()" class="btn btn-secondary btn-lg btn-block" role="button">Öde</a>
     </div>
     <div class="col-md-5">
       <div class="card mb-3" style="max-width: 540px;">
@@ -72,10 +72,12 @@
           <div class="col-md-5">
             <div class="card-body">
               <h5 *ngIf="order" class="card-title"><b>{{product.productName}} </b></h5>
-              <p *ngIf="product" class="card-text">{{product.descriptionProduct}}</p>
               <p *ngIf="product" class="card-text"><small class="text-muted"><b>Kategori:
-                    {{product.categoryId}}</b></small></p>
-              <p *ngIf="product" class="card-text"><small class="text-muted"><b>Ücret: {{product.unitPrice}}</b></small>
+                    {{product.categoryName}}</b></small></p>
+                    <p *ngIf="product" class="card-text"><small class="text-muted"><b>Yayıncı:
+                      {{product.gameName}}</b></small></p>
+              <p *ngIf="product" class="card-text"><small class="text-muted"><b>Ücret: {{product.unitPrice | currency:
+                "TRY":"₺":"3.2-2"}}</b></small>
               </p>
             </div>
           </div>
@@ -84,3 +86,4 @@
     </div>
   </div>
 </div>
+

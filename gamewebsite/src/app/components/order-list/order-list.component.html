@@ -1,0 +1,33 @@
+<table class="table table-striped">
+  <thead class="table-seceondary">
+    <tr>
+      <th scope="col">Sipariş ID</th>
+      <th scope="col">Kullanıcı Adı</th>
+      <th scope="col">Kullanıcı Soyadı</th>
+      <th scope="col">Kullanıcı Email</th>
+      <th scope="col">Sipariş Tarihi</th>
+      <th scope="col">Oyun Adı</th>
+      <th scope="col">Fiyat</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let orderDetails of orderDetails">
+      <th scope="row">{{ orderDetails.orderId }}</th>
+      <td>{{ orderDetails.firstName }}</td>
+      <td>{{ orderDetails.lastName }}</td>
+      <td>{{ orderDetails.email }}</td>
+      <td>{{ orderDetails.orderDate }}</td>
+      <td>{{ orderDetails.gameName }}</td>
+      <td>{{ orderDetails.unitPrice }}</td>
+      <td>
+        <button class="btn btn-secondary m-1" click="routerLink" routerLink="update/{{ orderDetails.orderId }}">
+          Güncelle
+        </button>
+        <button class="btn btn-secondary m-1" click="routerLink" routerLink="delete/{{ orderDetails.orderId }}">
+          Sil
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

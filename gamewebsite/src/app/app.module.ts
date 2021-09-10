@@ -37,6 +37,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AboutComponent } from './components/about/about.component';
+import { OrderListComponent } from './components/order-list/order-list.component';
+import { OrderUpdateComponent } from './components/order-update/order-update.component';
+import { OrderDeleteComponent } from './components/order-delete/order-delete.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +74,9 @@ import { AboutComponent } from './components/about/about.component';
     ProfilComponent,
     RegisterComponent,
     AboutComponent,
+    OrderListComponent,
+    OrderUpdateComponent,
+    OrderDeleteComponent,
 
   ],
   imports: [

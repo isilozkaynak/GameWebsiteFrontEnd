@@ -4,7 +4,9 @@ import { Observable } from 'rxjs';
 import { ItemResponseModel } from '../models/itemResponseModel';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Order } from '../models/order';
+import { OrderDetail } from '../models/orderDetail';
 import { ResponseModel } from '../models/responseModel';
+import { SingleResponseModel } from '../models/singleResponseModel';
 
 @Injectable({
   providedIn: 'root'
@@ -19,14 +21,20 @@ export class OrderService {
     return this.httpClient.get<ListResponseModel<Order>>(newPath);
 }
 
+getOrderDetailDto():Observable<ListResponseModel<OrderDetail>>{
+  let newPath = this.apiUrl + "orders/getorderdetails";
+  return this.httpClient.get<ListResponseModel<OrderDetail>>(newPath);
+}
+
 getByOrderId(id:number):Observable<ListResponseModel<Order>>{
   let newPath = this.apiUrl + "orders/getbyorderid?id="+id
   return this.httpClient.get<ListResponseModel<Order>>(newPath)
 }
-getByOrderIdSingle(id:number):Observable<ItemResponseModel<Order>>{
+getByOrderIdSingle(id:number):Observable<SingleResponseModel<Order>>{
   let newPath = this.apiUrl + "orders/getbyorderid?id="+id
-  return this.httpClient.get<ItemResponseModel<Order>>(newPath)
+  return this.httpClient.get<SingleResponseModel<Order>>(newPath)
 }
+
 add(order:Order):Observable<ResponseModel>{
   return this.httpClient.post<ResponseModel>(this.apiUrl+"orders/add", order)
 }

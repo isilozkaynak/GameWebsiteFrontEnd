@@ -1,0 +1,42 @@
+<div class="content">
+  <div class="col-md-12">
+      <div class="card">
+          <div class="card-header">
+              <h5 class="title text-center">Sipariş sil</h5>
+          </div>
+          <div class="card-body">
+              <form [formGroup]="orderDeleteForm" *ngIf="orderDeleteForm">
+                  <div class="mb-3">
+                      <label for="orderId" style="display: none;"><b>Sipariş Id</b></label>
+                      <input type="number" id="orderId" formControlName="orderId" class="form-control" [(ngModel)]="orderId" style="display: none;" />
+                  </div>
+              </form>
+
+              <table class="table container">
+                  <thead>
+                      <tr>
+                          <th>Sipariş ID</th>
+                          <th>Kullanıcı ID</th>
+                          <th>Sipariş Tarihi</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngIf="order">
+                          <td>{{order.orderId}}</td>
+                          <td>{{order.userId}}</td>
+                          <td>{{order.orderDate}}</td>
+                      </tr>
+                  </tbody>
+
+              </table>
+
+          </div>
+          <div class="card-footer">
+              <button class="btn btn-fill btn-secondary m-1" (click)="backToList()">Geri dön</button>
+              <button class="btn btn-fill btn-secondary m-1" style="float: right;" (click)="delete()">Eminim sil</button>
+              <span style="float: right;"><b>Bu Sipariş silinecek emin misiniz?</b></span>
+
+          </div>
+      </div>
+  </div>
+</div>

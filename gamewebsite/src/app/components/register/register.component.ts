@@ -12,6 +12,8 @@ import { AuthService } from 'src/app/services/auth.service';
 export class RegisterComponent implements OnInit {
 
   registerForm:FormGroup;
+  imgUrl ="https://localhost:44365/";
+  registerImage="images/register.jpg";
 
   constructor(
     private formBuilder:FormBuilder,
@@ -51,4 +53,6 @@ export class RegisterComponent implements OnInit {
     }
 
   }
+
+
 }

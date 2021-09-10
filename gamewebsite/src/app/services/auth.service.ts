@@ -61,8 +61,6 @@ export class AuthService {
   async setUserStats(){
     if(this.loggedIn()){
       this.setCurrentUserId()
-
-
     }
   }
 

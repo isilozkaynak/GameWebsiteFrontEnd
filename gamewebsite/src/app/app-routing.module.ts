@@ -10,6 +10,9 @@ import { GameDeleteComponent } from './components/game-delete/game-delete.compon
 import { GameListComponent } from './components/game-list/game-list.component';
 import { GameUpdateComponent } from './components/game-update/game-update.component';
 import { LoginComponent } from './components/login/login.component';
+import { OrderDeleteComponent } from './components/order-delete/order-delete.component';
+import { OrderListComponent } from './components/order-list/order-list.component';
+import { OrderUpdateComponent } from './components/order-update/order-update.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { ProductAddComponent } from './components/product-add/product-add.component';
 import { ProductDeleteComponent } from './components/product-delete/product-delete.component';
@@ -55,6 +58,10 @@ const routes: Routes = [
   {path:"register", component:RegisterComponent},
 
   {path:"details/payment/:id",component:PaymentComponent},
+
+  {path:"orders/list",component:OrderListComponent},
+  {path:"orders/list/update/:id",component:OrderUpdateComponent},
+  {path:"orders/list/delete/:id",component:OrderDeleteComponent},
 ];
 
 @NgModule({

@@ -12,12 +12,11 @@ import { GameService } from 'src/app/services/game.service';
 })
 export class ProductFilterComponent implements OnInit {
 
-  selectedCategory:string=null;
+
   selectedGame:string=null;
-  categories:Category[]=[];
   games:Game[]=[];
 
-  constructor(private categoryService:CategoryService,
+  constructor(
     private gameService:GameService,
     private toastrServise:ToastrService
     ) { }
@@ -25,12 +24,11 @@ export class ProductFilterComponent implements OnInit {
 
 
     ngOnInit(): void {
-      this.getCategories();
       this.getGames();
     }
   checkFilterClass()
   {
-    if(this.selectedCategory||this.selectedGame)
+    if(this.selectedGame)
     {
       return "btn btn-primary"
     }
@@ -41,33 +39,17 @@ export class ProductFilterComponent implements OnInit {
   }
   routingLink()
   {
-    if(this.selectedCategory!=null&&this.selectedGame!=null)
-    {
-      return "/products/category/"+this.selectedCategory+"/game/"+this.selectedGame
-
-    }
-    else if(this.selectedGame!=null&&this.selectedCategory==null)
+    if(this.selectedGame!=null)
     {
       return "/products/game/"+this.selectedGame
 
-    }
-    else if(this.selectedCategory!=null&&this.selectedGame==null)
-    {
-
-      return "products/category/"+this.selectedCategory
     }
     else{
 
     return "/products"
     }
   }
-  getCategories()
-  {
-    this.categoryService.getCategories().subscribe((response)=>
-    {
-      this.categories=response.data;
-    })
-  }
+
   getGames()
   {
     this.gameService.getGames().subscribe((response)=>

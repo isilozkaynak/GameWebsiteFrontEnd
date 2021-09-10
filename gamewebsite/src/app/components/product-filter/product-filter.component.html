@@ -1,10 +1,5 @@
 <div class="row">
-  <div class="col-md-4">
-      <select [(ngModel)]="selectedCategory" class="form-select">
-      <option selected hidden >Kategori Seçin</option>
-      <option *ngFor="let category of categories" value="{{category.categoryId}}">{{category.categoryName}}</option>
-    </select>
-  </div>
+  <label for="products">Bir yayıncı seçin</label>
   <div class="col-md-4">
       <select [(ngModel)]="selectedGame" class="form-select">
       <option selected hidden>Yayıncı Seçin</option>

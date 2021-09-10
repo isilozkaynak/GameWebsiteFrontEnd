@@ -36,6 +36,7 @@ import { FavoriteSummaryComponent } from './components/favorite-summary/favorite
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { RegisterComponent } from './components/register/register.component';
     FooterComponent,
     ProfilComponent,
     RegisterComponent,
+    AboutComponent,
 
   ],
   imports: [

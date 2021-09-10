@@ -24,7 +24,7 @@ export class ProductComponent implements OnInit {
 
   imgUrl ="https://localhost:44365/";
   defaultImage="images/default.jpg";
-  welcomeImage="images/default.JPG";
+  welcomeImage="images/welcome.jpg";
 
 
   constructor(private productService: ProductService,

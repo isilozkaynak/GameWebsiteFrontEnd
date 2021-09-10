@@ -16,9 +16,6 @@ export class ProductDetailService {
   constructor(private httpClient:HttpClient) { }
 
 
-
-
-
   getProductImageByProductId(productId:number):Observable<ListResponseModel<ProductImage>>{
     let newPath = this.apiUrl + "productimages/getimagesbyproductid?productId="+productId;
     return this.httpClient.get<ListResponseModel<ProductImage>>(newPath);
@@ -29,9 +26,14 @@ export class ProductDetailService {
     return this.httpClient.get<ListResponseModel<Product>>(newPath);
   }
 
+  getProductDetails(): Observable<ListResponseModel<Product>> {
+    let newPath = this.apiUrl + "products/getall";
+    return this.httpClient.get<ListResponseModel<Product>>(newPath);
+  }
+
   getImages(productId:number):Observable<ListResponseModel<ProductImage>>{
     let newPath = this.apiUrl + "productimages/getimagesbyproductid?productId="+productId
     return this.httpClient.get<ListResponseModel<ProductImage>>(newPath)
   }
 
-}*/
+} */

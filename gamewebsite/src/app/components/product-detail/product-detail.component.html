@@ -33,13 +33,13 @@
             </button>
     </div>
     <div *ngIf="product" class="m-auto col-md-6">
-        <div class=" row">
+        <!--<div class=" row">
 
             <h2 class="d-flex tittle">{{product.productName}} </h2>
-            <span *ngIf="productDetail">Kategori : <a style="margin-top:-7px; margin-bottom: 8px;" href="/products/category/{{product.categoryId}}">{{productDetail.categoryName}}</a></span>
+            <span *ngIf="product">Kategori : <a style="margin-top:-7px; margin-bottom: 8px;" href="/products/category/{{product.categoryId}}">{{product.categoryName}}</a></span>
             <span class="border border-secondary propf5"><b>Fiyat :</b> {{product.unitPrice | vatAdded:18 | currency}} </span>
             <span class="border border-secondary propf9"><b>Yayın Tarihi :</b> {{product.releaseDate}}</span>
-            <span class="border border-secondary propf9"><b>Yayıncı/Geliştirici :</b> {{product.gameId}}</span>
+            <span class="border border-secondary propf9"><b>Yayıncı/Geliştirici :</b> {{product.gameName}}</span>
 
 
             <div class="container mt-3" style="border: 1px solid gray;">
@@ -51,7 +51,62 @@
                 <i class="fa fa-handshake" style="color: #d8c8c8;" aria-hidden="true"> <span class="text-light"> Sepete Ekle</span></i>
               </button>
         </div>
+    </div>  -->
+
+
+
+    <div class="list-group">
+      <div href="#" class="list-group-item  flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h2 class="mb-4"><b>{{product.productName}}</b></h2>
+        </div>
+        <h6>Açıklama:</h6>
+        <p>{{product.descriptionProduct}}</p>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Kategori : </td>
+              <td><a style="margin-top:-7px; margin-bottom: 8px;"  class="text-decoration-none" href="/products/category/{{product.categoryId}}">{{product.categoryName}}</a></td>
+            </tr>
+            <tr>
+              <td>Yayıncı : </td>
+              <td><a style="margin-top:-7px; margin-bottom: 8px;"  class="text-decoration-none" href="/products/category/{{product.gameId}}">{{product.gameName}}</a></td>
+            </tr>
+            <tr>
+              <td>Yayın Tarihi : </td>
+              <td>{{product.releaseDate}}</td>
+            </tr>
+            <tr>
+              <td>Fiyat : </td>
+              <td>{{product.unitPrice | vatAdded:18 | currency}}</td>
+            </tr>
+            <tr>
+              <td><button type="button" class="btn btn-secondary justify-content-between">Sepete Ekle</button></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <!--  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">List group item heading</h5>
+          <small class="text-muted">3 days ago</small>
+        </div>
+        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        <small class="text-muted">Donec id elit non mi porta.</small>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">List group item heading</h5>
+          <small class="text-muted">3 days ago</small>
+        </div>
+        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+        <small class="text-muted">Donec id elit non mi porta.</small>
+      </a>-->
     </div>
+
+</div> <!--emanet div-->
+
 </div>
 <hr>
 

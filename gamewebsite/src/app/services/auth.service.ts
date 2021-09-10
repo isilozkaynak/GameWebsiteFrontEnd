@@ -2,10 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginModel } from '../models/loginModel';
+import { Register } from '../models/register';
 import { ResponseModel } from '../models/responseModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
 import { LocalStorageService } from './local-storage.service';
+import { JwtHelperService} from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,6 @@ export class AuthService {
 
   currentUserId: number;
   jwtHelperService:JwtHelperService = new JwtHelperService();
-
   apiUrl = 'https://localhost:44365/api/auth/';
   constructor(private httpClient:HttpClient, private storageService:LocalStorageService) { }
 
@@ -45,6 +46,8 @@ export class AuthService {
   getCurrentUserId():number {
     return this.currentUserId
   }
+
+
   getDecodedToken(){
     try{
       return this.jwtHelperService.decodeToken(this.storageService.getToken());
@@ -53,6 +56,8 @@ export class AuthService {
         return null;
     }
   }
+
+
   async setUserStats(){
     if(this.loggedIn()){
       this.setCurrentUserId()
@@ -60,8 +65,12 @@ export class AuthService {
 
     }
   }
+
+
   loggedIn(): boolean {
     let isExpired = this.jwtHelperService.isTokenExpired(this.storageService.getToken());
     return !isExpired;
   }
+
+
 }

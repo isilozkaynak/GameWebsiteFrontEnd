@@ -16,7 +16,7 @@ export class ProfilComponent implements OnInit {
   customerForm: FormGroup
   email: string
   password: FormControl
-  user: User = new User();
+  user: User;
   status: string;
   customer: Customer;
 

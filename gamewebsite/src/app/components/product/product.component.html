@@ -85,37 +85,37 @@
 
 
 
-
-
-
-
+<div><img style="height: 400px; width: 100%; border: 2px solid #272b30; margin:10px;" [src]="imgUrl + welcomeImage"
+  alt="başarısız"></div>
 
 
 
 <div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
-
+<!--
 <div class="mb-3">
   <label for="filterText" class="form-label">Ürün Ara</label>
   <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
     placeholder="arama ifadesi giriniz...">
+</div> -->
+<div class="d-flex justify-content-end ">
+  <input type="text" [(ngModel)]="filterText" class="search p-2" id="filterText"
+    placeholder="Arama ifadesi giriniz..">
+  <button class="btn btn-dark" type="button"><i class=" fa fa-search"></i></button>
 </div>
 
-<div *ngIf="filterText" class="alert alert-success">
+<div *ngIf="filterText.length>2" class="alert alert-success text-center">
   {{filterText}} için sonuçlar :
 </div>
-
 
   <table *ngIf="dataLoaded==true" class="table">
     <thead>
       <tr>
-        <th></th>
         <th>Ürün Adı</th>
         <th>Kategori</th>
         <th>Fiyat</th>
-        <th>KDV'li Fiyat</th>
-        <th>Game Adı</th>
+        <th>Yayıncı Adı</th>
         <th>Yayın Tarihi</th>
         <th></th>
         <th></th>
@@ -123,15 +123,14 @@
     </thead>
     <tbody>
       <tr *ngFor="let product of products | filterPipe : filterText">
-        <td><img *ngIf="product.productImage.length==0 " [src]="imgUrl + defaultImage " class="d-block w-100 " alt="... "></td>
+        <!--<td><img *ngIf="product.productImage.length==0 " [src]="imgUrl + defaultImage " class="d-block w-100 " alt="... "></td>-->
         <td>{{product.productName | uppercase}}</td>
-        <td>{{product.categoryId}}</td>
-        <td>{{product.unitPrice | currency}}</td>
+        <td>{{product.categoryName}}</td>
         <td>{{product.unitPrice | vatAdded:18 | currency}}</td>
-        <td>{{product.gameId}}</td>
+        <td>{{product.gameName}}</td>
         <td>{{product.releaseDate}}</td>
-        <td  routerLink="/products/detail/{{product.productId}}"><i class="fas fa-edit btn btn-success">Detay</i></td>
-        <td><button (click)="addToCart(product)" type="button" class="btn btn-success">Sepete ekle</button></td>
+        <td  routerLink="/products/detail/{{product.productId}}"><i class="fas fa-edit btn btn-secondary w-100 h-30">Detay</i></td>
+        <td><button (click)="addToCart(product)" type="button" class="btn btn-secondary w-90 h-20">Sepete ekle</button></td>
       </tr>
     </tbody>
   </table>

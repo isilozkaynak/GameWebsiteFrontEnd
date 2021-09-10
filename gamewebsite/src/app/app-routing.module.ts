@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './components/about/about.component';
 import { CategoryAddComponent } from './components/category-add/category-add.component';
 import { CategoryDeleteComponent } from './components/category-delete/category-delete.component';
 import { CategoryListComponent } from './components/category-list/category-list.component';
@@ -16,6 +17,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { ProductComponent } from './components/product/product.component';
+import { ProfilComponent } from './components/profil/profil.component';
+import { RegisterComponent } from './components/register/register.component';
 import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
@@ -27,8 +30,11 @@ const routes: Routes = [
   {path:"products/detail/payment/:id",component:PaymentComponent},
   {path:"products/add", component:ProductAddComponent, canActivate:[LoginGuard]},
   {path:"products/update", component:ProductUpdateComponent},
+  {path:"products/update/:id", component:ProductUpdateComponent},
   {path:"products/delete", component:ProductDeleteComponent, canActivate:[LoginGuard]},
-  {path:"products/list", component:ProductListComponent, canActivate:[LoginGuard]},
+  {path:"products/delete/:id", component:ProductDeleteComponent, canActivate:[LoginGuard]},
+  {path:"products/list", component:ProductListComponent},
+  {path:"products/list/add", component:ProductListComponent, canActivate:[LoginGuard]},
 
   //category
   {path:"categories/list", component:CategoryListComponent, canActivate:[LoginGuard]},
@@ -42,7 +48,13 @@ const routes: Routes = [
   {path:"games/update", component:GameUpdateComponent, canActivate:[LoginGuard]},
   {path:"games/delete", component:GameDeleteComponent, canActivate:[LoginGuard]},
 
-  {path:"login", component:LoginComponent}
+  {path:"profil",component:ProfilComponent},
+  {path:"about", component:AboutComponent},
+
+  {path:"login", component:LoginComponent},
+  {path:"register", component:RegisterComponent},
+
+  {path:"details/payment/:id",component:PaymentComponent},
 ];
 
 @NgModule({

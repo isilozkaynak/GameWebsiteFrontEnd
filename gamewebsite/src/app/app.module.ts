@@ -8,7 +8,7 @@ import { GameComponent } from './components/game/game.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { OrderComponent } from './components/order/order.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NaviComponent } from './components/navi/navi.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
@@ -27,6 +27,7 @@ import { GameDeleteComponent } from './components/game-delete/game-delete.compon
 import { GameUpdateComponent } from './components/game-update/game-update.component';
 import { CategoryDeleteComponent } from './components/category-delete/category-delete.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,9 @@ import { LoginComponent } from './components/login/login.component';
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

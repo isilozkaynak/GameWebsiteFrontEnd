@@ -13,6 +13,7 @@ import { ProductDeleteComponent } from './components/product-delete/product-dele
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { ProductUpdateComponent } from './components/product-update/product-update.component';
 import { ProductComponent } from './components/product/product.component';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {path:"", pathMatch:"full", component:ProductComponent},
@@ -21,19 +22,19 @@ const routes: Routes = [
   {path:"products/game/:gameId", component:ProductComponent},
   {path:"products/detail/:productId", component:ProductDetailComponent},
   {path:"products/detail/payment/:id",component:PaymentComponent},
-  {path:"products/add", component:ProductAddComponent},
-  {path:"products/update", component:ProductUpdateComponent},
-  {path:"products/delete", component:ProductDeleteComponent},
+  {path:"products/add", component:ProductAddComponent, canActivate:[LoginGuard]},
+  {path:"products/update", component:ProductUpdateComponent, canActivate:[LoginGuard]},
+  {path:"products/delete", component:ProductDeleteComponent, canActivate:[LoginGuard]},
 
   //category
-  {path:"categories/add", component:CategoryAddComponent},
-  {path:"categories/update", component:CategoryUpdateComponent},
-  {path:"categories/delete", component:CategoryDeleteComponent},
+  {path:"categories/add", component:CategoryAddComponent, canActivate:[LoginGuard]},
+  {path:"categories/update", component:CategoryUpdateComponent, canActivate:[LoginGuard]},
+  {path:"categories/delete", component:CategoryDeleteComponent, canActivate:[LoginGuard]},
 
   //game
-  {path:"games/add", component:GameAddComponent},
-  {path:"games/update", component:GameUpdateComponent},
-  {path:"games/delete", component:GameDeleteComponent},
+  {path:"games/add", component:GameAddComponent, canActivate:[LoginGuard]},
+  {path:"games/update", component:GameUpdateComponent, canActivate:[LoginGuard]},
+  {path:"games/delete", component:GameDeleteComponent, canActivate:[LoginGuard]},
 
   {path:"login", component:LoginComponent}
 ];

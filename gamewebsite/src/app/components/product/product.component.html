@@ -1,7 +1,7 @@
 <div><img style="height: 400px; width: 100%; border: 2px solid #272b30; margin:10px;" [src]="imgUrl + welcomeImage"
   alt="welcome image"></div>
 
-
+<div class="container">
 <div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
@@ -28,8 +28,8 @@
         <th></th>
       </tr>
     </thead>
-    <tbody>
-      <tr *ngFor="let product of products | filterPipe : filterText">
+    <tbody  *ngFor="let product of products | filterPipe : filterText">
+      <tr>
         <td>{{product.productName | uppercase}}</td>
         <td>{{product.categoryName}}</td>
         <td>{{product.unitPrice | vatAdded:18 | currency}}</td>
@@ -39,6 +39,14 @@
         <td> <a class="nav-link" (click)="addToFavorite(product)" role="button" type="button" style="font-size: x-large; right: 5px;" title="Favorilerime ekle">
           <i class="fa fa-heart" style="color:red;" aria-hidden="true"></i>
       </a></td>
+    <!--  <td>
+        <a href="details/{{product.productId}}">
+          <img *ngIf="product && product.productImage.length == 0" class="card-img-top" alt="Image" width="200" height="200" style="object-fit: cover;" [src]="imgUrl + defaultImage">
+          <img *ngIf="product && product.productImage.length != 0" class="card-img-top" alt="Image" width="200" height="200" style="object-fit: contain;" [src]="imgUrl + product.productImage[0].imagePath ">
+      </a>
+      </td> -->
       </tr>
     </tbody>
   </table>
+
+</div>

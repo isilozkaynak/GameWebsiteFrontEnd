@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  imgUrl ="https://localhost:44365/";
+  aboutImage="images/about.jpg";
   constructor() { }
 
   ngOnInit(): void {

@@ -26,12 +26,10 @@ export class ProductComponent implements OnInit {
   imgUrl ="https://localhost:44365/";
   defaultImage="/images/default.jpg";
   welcomeImage="/images/welcome.jpg";
-  basePath = "https://localhost:44365/products/";
-  productImages: ProductImage[];
+  basePath = "https://localhost:44365/api/products/";
+  productImages: ProductImage;
   currentImage:ProductImage;
-
-
-
+  apiUrl = "https://localhost:44365/api/";
 
   constructor(private productService: ProductService,
     private toastrService: ToastrService,

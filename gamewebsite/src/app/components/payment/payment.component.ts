@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Order } from 'src/app/models/order';
@@ -14,12 +15,13 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class PaymentComponent implements OnInit {
 
+  paymentForm:FormGroup;
   product: Product;
   productImages: ProductImage;
   order: Order;
   imgUrl ="https://localhost:44365/";
   apiUrl = "https://localhost:44365/api/";
-  defaultImage = "images/default.JPG";
+  defaultImage = "images/default.jpg";
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,

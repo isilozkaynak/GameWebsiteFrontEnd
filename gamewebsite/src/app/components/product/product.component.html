@@ -1,104 +1,11 @@
-<!--<div>
-  <div><img style="height: 350px; width: 100%; border: 10px solid #272b30;" [src]="imgUrl + welcomeImage"
-      alt="başarısız"></div>
-
-  <div class="row">
-    <div class="col-md-3">
-      <app-category></app-category>
-      <app-game></app-game>
-    </div>
-    <div class="col-md-9">
-      <div class="row">
-        <div class="col-md-9 p-4">
-          <app-product-filter></app-product-filter>
-        </div>
-        <div class="col-md-3">
-          <div class="d-flex justify-content-end mt-3">
-            <input type="text" [(ngModel)]="filterText" class="search p-2" id="filterText"
-              placeholder="Arama ifadesi giriniz..">
-            <button class="btn btn-dark" type="button"><i class=" fa fa-search"></i></button>
-          </div>
-        </div>
-
-      </div>
-
-
-
-      <div *ngIf="filterText.length>2" class="alert alert-success text-center">
-        {{filterText}} için sonuçlar :
-      </div>
-
-
-        <div class="row">
-          <div *ngFor="let product of products | filterPipe:filterText" class="m-auto mt-3 col-md-3 card"
-            style="width: 20rem;">
-
-            <a class="nav-link" (click)="addToFavorite(product)" role="button" type="button"
-              style="font-size: x-large; position: absolute; right: 5px;" title="Favorilerime ekle">
-              <i class="fa fa-heart" style="color: rgb(226, 145, 145);" aria-hidden="true"></i>
-            </a>
-            <a href="products/detail/{{product.productId}}">
-              <img *ngIf="product.productImage.length == 0" class="card-img-top" alt="Image" width="200" height="200"
-                style="object-fit: cover;" [src]="imgUrl + defaultImage ">
-              <img *ngIf="product.productImage.length != 0" class="card-img-top" alt="Image" width="200" height="200"
-                style="object-fit: contain;" [src]="imgUrl + product.productImage[0].imagePath ">
-            </a>
-
-            <div class="card-body" style="cursor: context-menu;">
-              <h5 class="text-center card-title ">{{product.productName}}</h5>
-            </div>
-            <ul class="list-group list-group-flush " style="cursor: context-menu;">
-              <li class="text-center list-group-item ">Kategori : {{product.categoryId}}</li>
-              <li class="text-center list-group-item ">Yayıncı : <i class="fas fa-palette" style="color: gray;"></i>
-                {{product.gameId}}</li>
-              <li class="text-center list-group-item ">Yayın Tarihi : <i class="fas fa-gas-pump"
-                  style="color: gray;"></i> {{product.releaseDate}}</li>
-              <li class="text-center list-group-item ">Fiyatı : {{product.unitPrice| currency: "TRY":"₺":"3.2-2"}}</li>
-              <li class="text-center list-group-item ">Açıklama : {{product.descriptionProduct}}</li>
-            </ul>
-            <div class="text-center card-body">
-              <a href="products/detail/{{product.productId}}" class="btn btn-dark">DETAY</a>
-            </div>
-
-          </div>
-
-   </div>
-
-
-    </div>
-
-  </div>
-
-
-</div>-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div><img style="height: 400px; width: 100%; border: 2px solid #272b30; margin:10px;" [src]="imgUrl + welcomeImage"
-  alt="başarısız"></div>
-
+  alt="welcome image"></div>
 
 
 <div *ngIf="dataLoaded==false" class="spinner-border text-info" role="status">
   <span class="visually-hidden">Loading...</span>
 </div>
-<!--
-<div class="mb-3">
-  <label for="filterText" class="form-label">Ürün Ara</label>
-  <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
-    placeholder="arama ifadesi giriniz...">
-</div> -->
+
 <div class="d-flex justify-content-end ">
   <input type="text" [(ngModel)]="filterText" class="search p-2" id="filterText"
     placeholder="Arama ifadesi giriniz..">
@@ -116,21 +23,22 @@
         <th>Kategori</th>
         <th>Fiyat</th>
         <th>Yayıncı Adı</th>
-        <th>Yayın Tarihi</th>
+        <th></th>
         <th></th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let product of products | filterPipe : filterText">
-        <!--<td><img *ngIf="product.productImage.length==0 " [src]="imgUrl + defaultImage " class="d-block w-100 " alt="... "></td>-->
         <td>{{product.productName | uppercase}}</td>
         <td>{{product.categoryName}}</td>
         <td>{{product.unitPrice | vatAdded:18 | currency}}</td>
         <td>{{product.gameName}}</td>
-        <td>{{product.releaseDate}}</td>
         <td  routerLink="/products/detail/{{product.productId}}"><i class="fas fa-edit btn btn-secondary w-100 h-30">Detay</i></td>
         <td><button (click)="addToCart(product)" type="button" class="btn btn-secondary w-90 h-20">Sepete ekle</button></td>
+        <td> <a class="nav-link" (click)="addToFavorite(product)" role="button" type="button" style="font-size: x-large; right: 5px;" title="Favorilerime ekle">
+          <i class="fa fa-heart" style="color:red;" aria-hidden="true"></i>
+      </a></td>
       </tr>
     </tbody>
   </table>

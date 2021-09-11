@@ -10,5 +10,6 @@ export interface Product{
   gameName:string;
   releaseDate:any,
   descriptionProduct:string,
-  productImage:ProductImage[];
+  productImage:ProductImage[],
+  imagePath:string,
 }

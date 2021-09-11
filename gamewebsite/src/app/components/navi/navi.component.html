@@ -43,19 +43,21 @@
 
               </li>
           </ul>
+
+          <ul class="navbar-nav" style="float: right;">
+            <app-favorite-summary></app-favorite-summary>
+          </ul>
+
           <ul *ngIf="checkToEmail()==true" class="navbar-nav" style="float: right;">
-              <app-favorite-summary></app-favorite-summary>
               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle mt-1" href="#" id="navbarDropdownn" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: large;">
+                  <a class="nav-link dropdown-toggle mt-1" href="#" id="navbarDropdownn" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       {{this.user.firstName}} {{this.user.lastName}}
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdownn">
                       <li>
-                          <a class="dropdown-item" href="/products/profil">Profil düzenle</a>
+                          <a class="dropdown-item" href="/profil">Profil düzenle</a>
                       </li>
                       <li><a class="dropdown-item" href="/products/list">Oyunları listele</a></li>
-                      <li><a class="dropdown-item" href="/categories/list">Kategorileri listele</a></li>
-                      <li><a class="dropdown-item" href="/games/list">Yayıncıları listele</a></li>
                       <li><a class="dropdown-item" href="/orders/list">Siparişleri listele</a></li>
 
                       <li>
@@ -67,7 +69,6 @@
                   </ul>
               </li>
           </ul>
-
       </div>
 
   </div>

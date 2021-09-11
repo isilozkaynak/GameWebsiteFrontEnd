@@ -7,5 +7,6 @@ export interface ProductDetail{
   ReleaseDate:any,
   unitPrice:number,
   descriptions:string,
-  descriptionProduct:string
+  descriptionProduct:string,
+  imagePath:string
 }

@@ -8,6 +8,7 @@ import { CartService } from 'src/app/services/cart.service';
 import { FavoriteService } from 'src/app/services/favorite.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { ProductImage } from 'src/app/models/productImage';
+import { ProductDetail } from 'src/app/models/productDetail';
 
 @Component({
   selector: 'app-product',
@@ -18,13 +19,18 @@ export class ProductComponent implements OnInit {
 
   products: Product[]=[];
   product: Product;
+  productDetail:ProductDetail[];
   dataLoaded:boolean = false;
   filterText = "";
-  productImages:ProductImage[];
-
+  productImage:ProductImage[];
   imgUrl ="https://localhost:44365/";
-  defaultImage="images/default.jpg";
-  welcomeImage="images/welcome.jpg";
+  defaultImage="/images/default.jpg";
+  welcomeImage="/images/welcome.jpg";
+  basePath = "https://localhost:44365/products/";
+  productImages: ProductImage[];
+  currentImage:ProductImage;
+
+
 
 
   constructor(private productService: ProductService,
@@ -47,6 +53,7 @@ export class ProductComponent implements OnInit {
       }
     })
   }
+
 
   addToCart(product: Product) {
     this.toastrService.success("Sepete eklendi", product.productName);

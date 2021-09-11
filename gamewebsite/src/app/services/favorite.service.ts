@@ -23,6 +23,7 @@ export class FavoriteService {
     let favoriteItem = new FavoriteItem();
     favoriteItem.product = product;
     FavoriteItems.push(favoriteItem)
+    this.toastrService.success(product.productName + " eklendi","Başarılı")
     this.localStorageService.set("productId", JSON.stringify(product.productId));
     }
 

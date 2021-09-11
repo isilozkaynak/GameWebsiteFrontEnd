@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  /*
   login() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
@@ -53,6 +54,22 @@ export class LoginComponent implements OnInit {
         console.log(responseError)
         this.toastrService.error(responseError.error)
       })
+    }else{
+      this.toastrService.error("Lütfen boş bırakmayınız...")
+    }
+  } */
+  login(){
+    if(this.loginForm.valid){
+    let loginModel = Object.assign({},this.loginForm.value)
+
+    this.authService.login(loginModel).subscribe(response=>{
+      this.toastrService.success("Giriş yapıldı", "Başarılı")
+      //this.localStorageService.set("token",response.data.token)
+      this.localStorageService.set("email",this.loginForm.value.email)
+      window.location.assign("products")
+    },responseError=>{
+      this.toastrService.error(responseError.error)
+    })
     }else{
       this.toastrService.error("Lütfen boş bırakmayınız...")
     }

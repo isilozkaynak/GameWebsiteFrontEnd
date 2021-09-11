@@ -1,6 +1,6 @@
 <li class="nav-item dropdown">
   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" title="Favorilerim">
-      Favorilerim <br><i class="fa fa-heart" style="color: rgb(145, 22, 22); margin-left: 25px;" aria-hidden="true"></i>
+     <i class="fa fa-heart" style="color: darkred;" aria-hidden="true"></i>
   </a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
       <li *ngFor="let favoriteItem of favoriteItems" style="width: 235px;">
@@ -10,7 +10,7 @@
           </a>
       </li>
       <li *ngIf="favoriteItems.length<1 " class="text-center">
-          <span class="badge rounded-pill bg-warning text-dark">Favorileriniz boş</span>
+          <span class="badge rounded-pill bg-secondary text-light">Favorileriniz boş</span>
       </li>
   </ul>
 </li>

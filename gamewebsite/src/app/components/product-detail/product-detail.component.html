@@ -1,60 +1,40 @@
 <br><br>
 
 <div class="row">
-    <div *ngIf="product" id="carouselExampleDark" class="carousel carousel-dark slide col-md-6" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active" data-bs-interval="10000">
-                <img *ngIf="product.productImage.length==0 " [src]="imgUrl + defaultImage " class="d-block w-100 " alt="... ">
-                <img *ngIf="product.productImage.length !=0 " [src]="imgUrl + product.productImage[0].imagePath " class="d-block w-100 " alt="... ">
-            </div>
-            <div *ngIf="product.productImage.length > 1" class="carousel-item" data-bs-interval="2000">
-                <img [src]="imgUrl + product.productImage[1].imagePath " class="d-block w-100 " alt="... ">
-            </div>
-            <div *ngIf="product.productImage.length > 2" class="carousel-item">
-                <img [src]="imgUrl + product.productImage[2].imagePath " class="d-block w-100 " alt="... ">
-            </div>
-            <div *ngIf="product.productImage.length > 3" class="carousel-item">
-                <img [src]="imgUrl + product.productImage[3].imagePath " class="d-block w-100 " alt="... ">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+  <div *ngIf="product" id="carouselExampleDark" class="carousel carousel-dark slide col-md-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
     </div>
-    <div *ngIf="product" class="m-auto col-md-6">
-        <!--<div class=" row">
-
-            <h2 class="d-flex tittle">{{product.productName}} </h2>
-            <span *ngIf="product">Kategori : <a style="margin-top:-7px; margin-bottom: 8px;" href="/products/category/{{product.categoryId}}">{{product.categoryName}}</a></span>
-            <span class="border border-secondary propf5"><b>Fiyat :</b> {{product.unitPrice | vatAdded:18 | currency}} </span>
-            <span class="border border-secondary propf9"><b>Yayın Tarihi :</b> {{product.releaseDate}}</span>
-            <span class="border border-secondary propf9"><b>Yayıncı/Geliştirici :</b> {{product.gameName}}</span>
-
-
-            <div class="container mt-3" style="border: 1px solid gray;">
-                <b>Açıklama :</b> {{product.descriptionProduct}}
-            </div>
-            <hr style="margin-top: 25px;">
-
-            <button type="button" class="btn btn-dark w-50" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fa fa-handshake" style="color: #d8c8c8;" aria-hidden="true"> <span class="text-light"> Sepete Ekle</span></i>
-              </button>
-        </div>
-    </div>  -->
-
-
-
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img *ngIf="product.productImage.length==0 " [src]="imgUrl + defaultImage " class="d-block w-100 " alt="... ">
+        <img *ngIf="product.productImage.length !=0 " [src]="imgUrl + product.productImage[0].imagePath "
+          class="d-block w-100 " alt="... ">
+      </div>
+      <div *ngIf="product.productImage.length > 1" class="carousel-item" data-bs-interval="2000">
+        <img [src]="imgUrl + product.productImage[1].imagePath " class="d-block w-100 " alt="... ">
+      </div>
+      <div *ngIf="product.productImage.length > 2" class="carousel-item">
+        <img [src]="imgUrl + product.productImage[2].imagePath " class="d-block w-100 " alt="... ">
+      </div>
+      <div *ngIf="product.productImage.length > 3" class="carousel-item">
+        <img [src]="imgUrl + product.productImage[3].imagePath " class="d-block w-100 " alt="... ">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div *ngIf="product" class="m-auto col-md-6">
     <div class="list-group">
       <div href="#" class="list-group-item  flex-column align-items-start">
         <div class="d-flex w-100 justify-content-between">
@@ -66,11 +46,13 @@
           <tbody>
             <tr>
               <td>Kategori : </td>
-              <td><a style="margin-top:-7px; margin-bottom: 8px;"  class="text-decoration-none" href="/products/category/{{product.categoryId}}">{{product.categoryName}}</a></td>
+              <td><a style="margin-top:-7px; margin-bottom: 8px;" class="text-decoration-none"
+                  href="/products/category/{{product.categoryId}}">{{product.categoryName}}</a></td>
             </tr>
             <tr>
               <td>Yayıncı : </td>
-              <td><a style="margin-top:-7px; margin-bottom: 8px;"  class="text-decoration-none" href="/products/category/{{product.gameId}}">{{product.gameName}}</a></td>
+              <td><a style="margin-top:-7px; margin-bottom: 8px;" class="text-decoration-none"
+                  href="/products/category/{{product.gameId}}">{{product.gameName}}</a></td>
             </tr>
             <tr>
               <td>Yayın Tarihi : </td>
@@ -81,127 +63,17 @@
               <td>{{product.unitPrice | vatAdded:18 | currency}}</td>
             </tr>
             <tr>
-              <td><button type="button" class="btn btn-secondary justify-content-between"><a href="/details/payment/{{product.productId}}"  class="text-decoration-none text-white">Sepete Ekle</a></button></td>
+              <td><button type="button" class="btn btn-secondary justify-content-between"><a
+                    href="/details/payment/{{product.productId}}" class="text-decoration-none text-white">Sepete
+                    Ekle</a></button></td>
               <td></td>
             </tr>
           </tbody>
         </table>
       </div>
-    <!--  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-          <small class="text-muted">3 days ago</small>
-        </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small class="text-muted">Donec id elit non mi porta.</small>
-      </a>
-      <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1">List group item heading</h5>
-          <small class="text-muted">3 days ago</small>
-        </div>
-        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-        <small class="text-muted">Donec id elit non mi porta.</small>
-      </a>-->
     </div>
 
-</div> <!--emanet div-->
+  </div>
 
 </div>
 <hr>
-
-<!--
-<div class="row">
-    <h3 class="text-center">En Çok Satanlar</h3>
-    <div *ngFor="let product of products | slice:2:7" class="m-auto mt-3 col-md-3 card" style="width: 15rem; height: 350px;">
-        <img *ngIf="product.productImage.length == 0" class="card-img-top" alt="Image" width="100" height="100" style="object-fit: cover;" [src]="imgUrl + defaultImage">
-        <img *ngIf="product.productImage.length != 0" class="card-img-top" alt="Image" width="100" height="100" style="object-fit: contain;" [src]="imgUrl + product.productImage[0].imagePath ">
-
-
-        <div class="card-body">
-            <h5 class="text-center card-title ">{{product.productName}}</h5>
-        </div>
-        <ul class="list-group list-group-flush ">
-            <li class="text-center list-group-item "><span class="discountt">{{product.unitPrice*1.2 | currency: "TRY":"₺":"3.2-2"}}
-            </span><br> {{product.unitPrice | currency: "TRY":"₺":"3.2-2"}}</li>
-        </ul>
-        <div class="text-center card-body">
-            <a href="detail/{{product.productId}}" class="btn btn-dark">DETAY</a>
-        </div>
-    </div>
-</div>
--->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button *ngFor="let image of productImages; let i = index" type="button" data-bs-target="#carouselExampleIndicators"
-      attr.data-bs-slide-to="{{ i }}" [class]="getButtonClass(image)" aria-current="true" aria-label="Slide 1"></button>
-  </div>
-
-  <div class="carousel-inner">
-    <div *ngFor="let image of productImages" [class]="getCurrentImageClass(image)">
-      <img src="getPath()+image.imagePath" class="d-block w-100" width="700" height="520" alt="Image">
-    </div>
-  </div> <!--src="{{getPath()+image.imagePath}}"-->
-
-  <!--
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-<div class="table-responsive-md">
-  <table class="table table-striped table-hover table-bordered">
-    <thead>
-      <tr>
-        <th>Id</th>
-        <th>Ürün Adı</th>
-        <th>Kategori</th>
-        <th>Fiyat</th>
-        <th>Game Adı</th>
-        <th>Yayın Tarihi</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!--<tr *ngFor="let product of products">-->
-
-        <!--
-      <td>{{product.productId}}</td>
-      <td>{{product.productName}}</td>
-      <td>{{product.categoryId}}</td>
-      <td>{{product.unitPrice}}</td>
-      <td>{{product.gameId}}</td>
-      <td>{{product.releaseDate}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>  -->
-
-
-
-
-
-
-

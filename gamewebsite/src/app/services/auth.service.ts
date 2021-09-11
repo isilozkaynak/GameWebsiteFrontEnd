@@ -6,8 +6,8 @@ import { Register } from '../models/register';
 import { ResponseModel } from '../models/responseModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { TokenModel } from '../models/tokenModel';
-import { LocalStorageService } from './local-storage.service';
 import { JwtHelperService} from "@auth0/angular-jwt";
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'

@@ -16,11 +16,11 @@ export class ProductDetailComponent implements OnInit {
   basePath = "https://localhost:44365/products/";
   products: Product[]=[];
   product:Product;
-  productDetail:ProductDetail;
+  productDetail:ProductDetail[];
   productImages: ProductImage[];
   currentImage:ProductImage;
   imgUrl ="https://localhost:44365/";
-  defaultImage="images/default.JPG";
+  defaultImage="images/default.jpg";
 
   constructor(private productService:ProductService, private router: Router, private activatedRoute:ActivatedRoute) { }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Game } from 'src/app/models/game';
 import { Product } from 'src/app/models/product';
 import { ProductDetail } from 'src/app/models/productDetail';
 import { ProductImage } from 'src/app/models/productImage';

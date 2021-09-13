@@ -55,7 +55,6 @@ export class GameDeleteComponent implements OnInit {
       let gameModel = Object.assign({}, this.gameDeleteForm.value);
       this.gameService.delete(gameModel).subscribe(response=>{
         this.toastrService.success(response.message,"Başarılı")
-        //this.backToList();
       }
       ,
       (responseError)=>

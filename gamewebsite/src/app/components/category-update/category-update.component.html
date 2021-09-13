@@ -1,6 +1,6 @@
 <div class="content">
   <div class="col-md-12">
-    <div class="card">
+    <div class="card bg-dark text-light">
       <div class="card-header">
         <h5 class="title">Kategori Güncelle</h5>
       </div>
@@ -9,16 +9,16 @@
         <form [formGroup]="categoryUpdateForm">
 
           <div class="mb-3">
-            <label for="categoryId">Güncellemek istediğiniz Kategori Id</label>
-              <div class="form-group">
+            <label for="categoryId" style="display: none;">Güncellemek istediğiniz Kategori Id</label>
+              <div class="form-group w-25">
                 <input type="number" id="categoryId" formControlName="categoryId" class="form-control"
-                  placeholder="Kategori Id" [(ngModel)]="categoryId"/>
+                  placeholder="Kategori Id" [(ngModel)]="categoryId" style="display: none;"/>
               </div>
           </div>
 
           <div class="mb-3">
             <label for="categoryName">Kategori adı</label>
-            <div class="form-group">
+            <div class="form-group w-25">
               <input type="text" id="categoryName" formControlName="categoryName" class="form-control"
                 [(ngModel)]="categoryName" placeholder="Kategori adı"/>
             </div>
@@ -28,8 +28,7 @@
       </div> <!--card-body-->
 
       <div class="card-footer">
-        <!--<button class="btn btn-fill btn-dark" (click)="backToList()">Geri dön</button>-->
-        <button class="btn btn-fill btn-success" (click)="update()" style="float: right;">Güncelle</button>
+        <button class="btn btn-fill btn-secondary" (click)="update()" style="float: left;">Güncelle</button>
       </div>
 
     </div> <!--card-->

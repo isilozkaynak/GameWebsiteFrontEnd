@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   imgUrl ="https://localhost:44365/";
-  loginImage="images/login.png";
+  loginImage="images/login.jpg";
   isSuccess = false;
 
   constructor(private formBuilder: FormBuilder,

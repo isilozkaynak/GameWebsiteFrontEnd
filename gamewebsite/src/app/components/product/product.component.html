@@ -16,7 +16,7 @@
   {{filterText}} için sonuçlar :
 </div>
 
-  <table *ngIf="dataLoaded==true" class="table">
+  <table *ngIf="dataLoaded==true" class="table text-light">
     <thead>
       <tr>
         <th>Ürün Adı</th>
@@ -32,7 +32,7 @@
       <tr>
         <td>{{product.productName | uppercase}}</td>
         <td>{{product.categoryName}}</td>
-        <td>{{product.unitPrice | vatAdded:18 | currency}}</td>
+        <td>{{product.unitPrice | vatAdded:18 | currency:" TRY ":" TL ":""}}</td>
         <td>{{product.gameName}}</td>
         <td  routerLink="/products/detail/{{product.productId}}"><i class="fas fa-edit btn btn-secondary w-100 h-30">Detay</i></td>
         <td><button (click)="addToCart(product)" type="button" class="btn btn-secondary w-90 h-20">Sepete ekle</button></td>

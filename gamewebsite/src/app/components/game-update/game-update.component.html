@@ -1,6 +1,6 @@
 <div class="content">
   <div class="col-md-12">
-    <div class="card">
+    <div class="card bg-dark text-light">
       <div class="card-header">
         <h5 class="title">Yayıncı/Geliştirici Güncelle</h5>
       </div>
@@ -9,16 +9,16 @@
         <form [formGroup]="gameUpdateForm">
 
           <div class="mb-3">
-            <label for="gameId">Güncellemek istediğiniz Yayıncı Id</label>
-              <div class="form-group">
+            <label for="gameId"  style="display: none;">Güncellemek istediğiniz Yayıncı Id</label>
+              <div class="form-group w-25">
                 <input type="number" id="gameId" formControlName="gameId" class="form-control"
-                  placeholder="Yayıncı Id" [(ngModel)]="gameId"/>
+                  placeholder="Yayıncı Id" [(ngModel)]="gameId"  style="display: none;"/>
               </div>
           </div>
 
           <div class="mb-3">
             <label for="gameName">Yayıncı adı</label>
-            <div class="form-group">
+            <div class="form-group w-25">
               <input type="text" id="gameName" formControlName="gameName" class="form-control"
                 [(ngModel)]="gameName" placeholder="Kategori adı"/>
             </div>
@@ -26,7 +26,7 @@
 
           <div class="mb-3">
             <label for="releaseDate">Tarihi</label>
-            <div class="form-group">
+            <div class="form-group w-25">
               <input type="date" id="releaseDate" formControlName="releaseDate" class="form-control"
                  [(ngModel)]="releaseDate" placeholder="Tarihi" />
             </div>
@@ -34,7 +34,7 @@
 
           <div class="mb-3">
             <label for="descriptions">Hakkında</label>
-            <div class="form-group">
+            <div class="form-group w-50">
               <input type="text" id="descriptions" formControlName="descriptions" class="form-control"
                 placeholder="Hakkında" [(ngModel)]="descriptions"/>
             </div>
@@ -44,8 +44,7 @@
       </div> <!--card-body-->
 
       <div class="card-footer">
-        <!--<button class="btn btn-fill btn-dark" (click)="backToList()">Geri dön</button>-->
-        <button class="btn btn-fill btn-success" (click)="update()" style="float: right;">Güncelle</button>
+        <button class="btn btn-fill btn-secondary" (click)="update()" style="float: left;">Güncelle</button>
       </div>
 
     </div> <!--card-->

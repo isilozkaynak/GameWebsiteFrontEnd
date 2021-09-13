@@ -50,7 +50,6 @@ export class OrderDeleteComponent implements OnInit {
       let orderModel = Object.assign({}, this.orderDeleteForm.value);
       this.orderService.delete(orderModel).subscribe(response=>{
         this.toastrService.success("Sipariş silindi","Başarılı")
-        this.backToList();
       },(responseError)=>{
         this.toastrService.error(responseError.error.message,'İşlem başarısız');
       }
@@ -58,9 +57,6 @@ export class OrderDeleteComponent implements OnInit {
   }else{
     this.toastrService.error('Formunuz eksik', 'Dikkat')
   }
-}
-backToList(){
-  this.router.navigate(["orders/list"])
 }
 
 }

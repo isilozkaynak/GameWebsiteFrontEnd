@@ -78,7 +78,6 @@ export class OrderUpdateComponent implements OnInit {
       let orderModel = Object.assign({}, this.orderUpdateForm.value);
       this.orderService.update(orderModel).subscribe(response=>{
         this.toastrService.success("Sipariş güncellendi","Başarılı")
-        this.backToList();
       }
       ,
       (responseError)=>
@@ -94,9 +93,5 @@ export class OrderUpdateComponent implements OnInit {
     else {
       this.toastrService.error("Formunuz eksik","Dikkat")
     }
-  }
-
-  backToList(){
-    this.router.navigate(["orders/list"])
   }
 }

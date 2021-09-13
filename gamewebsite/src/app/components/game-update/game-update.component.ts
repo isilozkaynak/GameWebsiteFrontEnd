@@ -62,7 +62,6 @@ export class GameUpdateComponent implements OnInit {
       let gameModel = Object.assign({}, this.gameUpdateForm.value);
       this.gameService.update(gameModel).subscribe(response=>{
         this.toastrService.success(response.message,"Başarılı")
-        //this.backToList();
       }
       ,
       (responseError)=>

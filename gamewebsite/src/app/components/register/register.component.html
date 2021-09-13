@@ -1,13 +1,14 @@
-<body class="text-center">
+<br><br>
+<body class="text-center bg-dark">
   <div class="row">
     <div class="col-md-6">
-      <img [src]="imgUrl + registerImage" class="rounded-circle" alt="register-image">
+      <img [src]="imgUrl + registerImage" class="rounded-circle" alt="register-image" style="width: 90%; height: 90%;">
     </div>
     <div class="col-md-6">
 
   <main class="form-signin">
-    <form [formGroup]="registerForm">
-        <h1 class="h3 mb-3 fw-normal">Kayıt ol</h1>
+    <form [formGroup]="registerForm" *ngIf="registerForm">
+        <h1 class="h3 mb-3 fw-normal text-light">Kayıt Ol</h1>
 
         <div class="form-floating">
             <input type="text" class="form-control" id="firstName" formControlName="firstName" placeholder="ad">
@@ -28,12 +29,12 @@
             <label for="floatingPassword">Şifre</label>
         </div>
 
-        <div class="checkbox mb-3">
+        <div class="checkbox mb-3 text-light">
             <span>Zaten kayıtlı mısın?  </span>
-            <a href="login">Giriş yap</a>
+            <a href="login" style="text-decoration: none;">Giriş yap</a>
         </div>
-        <button class="w-100 btn btn-lg btn-primary" (click)="register()" type="submit">Kayıt ol</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
+        <button class="w-100 btn btn-lg btn-secondary" (click)="register()" type="submit">Kayıt ol</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
     </form>
 </main>
     </div>

@@ -33,7 +33,6 @@ export class GameAddComponent implements OnInit {
           (response) => {
             console.log(response)
             this.toastrService.success(response.message, "Başarılı");
-            //this.router.navigate(['/markalar']);
           },
           (responseError) => {
             if (responseError.error.Errors.length > 0) {

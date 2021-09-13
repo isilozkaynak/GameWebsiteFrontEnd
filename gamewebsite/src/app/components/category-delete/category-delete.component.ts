@@ -52,7 +52,6 @@ export class CategoryDeleteComponent implements OnInit {
       let categoryModel = Object.assign({}, this.categoryDeleteForm.value);
       this.categoryService.delete(categoryModel).subscribe(response=>{
         this.toastrService.success(response.message,"Başarılı")
-        //this.backToList();
       }
       ,
       (responseError)=>
@@ -68,10 +67,4 @@ export class CategoryDeleteComponent implements OnInit {
       this.toastrService.error("Formunuz eksik","Dikkat")
     }
   }
-
-  /*
-  backToList(){
-    this.router.navigate(["categories/list"]);
-  } */
-
 }

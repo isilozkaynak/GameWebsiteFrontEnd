@@ -70,13 +70,4 @@ export class CategoryUpdateComponent implements OnInit {
       this.toastrService.error("Formunuz eksik","Dikkat")
     }
   }
-
-
-
-  /*
-  backToList(){
-    this.router.navigate(["brands/list"]);
-  }*/
-
-
 }

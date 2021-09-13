@@ -1,8 +1,8 @@
 <div class="content">
   <div class="col-md-12">
-      <div class="card">
+      <div class="card bg-dark text-light">
           <div class="card-header">
-              <h5 class="title text-center">Sipariş güncelle</h5>
+              <h5 class="title text-center">Sipariş Güncelle</h5>
           </div>
           <div class="card-body">
               <form [formGroup]="orderUpdateForm" *ngIf="orderUpdateForm">
@@ -12,7 +12,7 @@
                   </div>
                   <div class="mb-3">
                       <label for="productId">Oyun Adı</label>
-                      <div class="form-group">
+                      <div class="form-group w-25">
                           <select *ngIf="order" [(ngModel)]="order.productId" type="number" id="productId" class="form-select" aria-label="Oyun seçimi" formControlName="productId">
                               <option value="" disabled selected>Seçiniz..</option>
                               <option *ngFor="let product of products"  [ngValue]="product.productId">{{product.productName}}</option>
@@ -22,7 +22,7 @@
 
                   <div class="mb-3">
                       <label for="userId">Kullanıcı Adı</label>
-                      <div class="form-group">
+                      <div class="form-group w-25">
                           <select *ngIf="order" [(ngModel)]="order.userId" type="number" id="userId" class="form-select" aria-label="Kullanıcı seçimi" formControlName="userId">
                               <option value="" disabled selected>Seçiniz..</option>
                               <option *ngFor="let user of users"  [ngValue]="user.userId">{{user.firstName}} {{user.lastName}}</option>
@@ -32,8 +32,7 @@
               </form>
           </div>
           <div class="card-footer">
-              <button class="btn btn-fill btn-secondary m-1" (click)="backToList()">Geri dön</button>
-              <button class="btn btn-fill btn-secondary m-1" (click)="update()" style="float: right;">Güncelle</button>
+              <button class="btn btn-fill btn-secondary m-1" (click)="update()" style="float: left;">Güncelle</button>
           </div>
       </div>
   </div>

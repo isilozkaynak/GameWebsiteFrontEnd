@@ -1,10 +1,10 @@
-<table class="table table-striped">
-  <thead class="table-dark">
+<table class="table table-striped table-dark text-light">
+  <thead>
       <tr>
           <th scope="col">Kategori Id</th>
           <th scope="col">Kategori Adı</th>
           <th scope="col">
-              <button class="btn btn-success" click="routerLink" routerLink="add">
+              <button class="btn btn-secondary" click="routerLink" routerLink="add">
         Kategori Ekle
       </button>
           </th>
@@ -15,10 +15,10 @@
           <th scope="row">{{ category.categoryId }}</th>
           <td>{{ category.categoryName }}</td>
           <td>
-              <button class="btn btn-warning" click="routerLink" routerLink="update/{{ category.categoryId }}">
+              <button class="btn btn-secondary m-1" click="routerLink" routerLink="update/{{ category.categoryId }}">
         Güncelle
       </button>
-              <button class="btn btn-danger mx-2" click="routerLink" routerLink="delete/{{ category.categoryId }}">
+              <button class="btn btn-secondary m-1" click="routerLink" routerLink="delete/{{ category.categoryId }}">
         Sil
       </button>
           </td>

@@ -9,6 +9,7 @@ import { FavoriteService } from 'src/app/services/favorite.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { ProductImage } from 'src/app/models/productImage';
 import { ProductDetail } from 'src/app/models/productDetail';
+import { ProductImageService } from 'src/app/services/product-image.service';
 
 @Component({
   selector: 'app-product',
@@ -19,19 +20,21 @@ export class ProductComponent implements OnInit {
 
   products: Product[]=[];
   product: Product;
-  productDetail:ProductDetail[];
+  productDetail:ProductDetail;
+  productDetails: ProductDetail[];
   dataLoaded:boolean = false;
   filterText = "";
-  productImage:ProductImage[];
+  productImages:ProductImage[];
   imgUrl ="https://localhost:44365/";
   defaultImage="/images/default.jpg";
   welcomeImage="/images/welcome.jpg";
   basePath = "https://localhost:44365/api/products/";
-  productImages: ProductImage;
+  productImage: ProductImage;
   currentImage:ProductImage;
   apiUrl = "https://localhost:44365/api/";
 
   constructor(private productService: ProductService,
+    private productImageService:ProductImageService,
     private toastrService: ToastrService,
     private activatedRoot: ActivatedRoute,
     private cartService: CartService,

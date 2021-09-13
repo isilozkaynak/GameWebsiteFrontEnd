@@ -56,14 +56,12 @@ export class CategoryUpdateComponent implements OnInit {
       let categoryModel = Object.assign({}, this.categoryUpdateForm.value);
       this.categoryService.update(categoryModel).subscribe(response=>{
         this.toastrService.success(response.message,"Başarılı")
-        //this.backToList();
       }
       ,
       (responseError)=>
       {
             this.toastrService.error("Bu işleme yetkiniz yoktur.","Doğrulama hatası")
             console.log(responseError);
-
       }
       );
     } else {

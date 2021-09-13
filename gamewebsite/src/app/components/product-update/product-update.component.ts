@@ -69,7 +69,6 @@ export class ProductUpdateComponent implements OnInit {
       let productModel = Object.assign({}, this.productUpdateForm.value);
       this.productService.update(productModel).subscribe(response=>{
         this.toastrService.success(response.message,"Başarılı")
-        //this.backToList();
       }
       ,
       (responseError)=>

@@ -20,8 +20,6 @@ export class ProfilComponent implements OnInit {
   status: string;
   customer: Customer;
 
-
-
   constructor(
     private formBuilder: FormBuilder,
     private toastrService: ToastrService,

@@ -32,20 +32,20 @@ const routes: Routes = [
   {path:"products/detail/:productId", component:ProductDetailComponent},
   {path:"products/detail/payment/:id",component:PaymentComponent},
   {path:"products/add", component:ProductAddComponent, canActivate:[LoginGuard]},
-  {path:"products/update", component:ProductUpdateComponent},
-  {path:"products/update/:id", component:ProductUpdateComponent},
+  {path:"products/update", component:ProductUpdateComponent, canActivate:[LoginGuard]},
+  {path:"products/update/:id", component:ProductUpdateComponent, canActivate:[LoginGuard]},
   {path:"products/delete", component:ProductDeleteComponent, canActivate:[LoginGuard]},
-  {path:"products/delete/:id", component:ProductDeleteComponent},
+  {path:"products/delete/:id", component:ProductDeleteComponent, canActivate:[LoginGuard]},
   {path:"products/list", component:ProductListComponent},
-  {path:"products/list/add", component:ProductAddComponent},
-  {path:"products/list/update/:id", component:ProductUpdateComponent},
-  {path:"products/list/delete/:id", component:ProductDeleteComponent},
+  {path:"products/list/add", component:ProductAddComponent, canActivate:[LoginGuard]},
+  {path:"products/list/update/:id", component:ProductUpdateComponent, canActivate:[LoginGuard]},
+  {path:"products/list/delete/:id", component:ProductDeleteComponent, canActivate:[LoginGuard]},
 
   //category
   {path:"categories/list", component:CategoryListComponent},
-  {path:"categories/list/add", component:CategoryAddComponent},
-  {path:"categories/list/update/:id", component:CategoryUpdateComponent},
-  {path:"categories/list/delete/:id", component:CategoryDeleteComponent},
+  {path:"categories/list/add", component:CategoryAddComponent, canActivate:[LoginGuard]},
+  {path:"categories/list/update/:id", component:CategoryUpdateComponent, canActivate:[LoginGuard]},
+  {path:"categories/list/delete/:id", component:CategoryDeleteComponent, canActivate:[LoginGuard]},
   {path:"categories/add", component:CategoryAddComponent, canActivate:[LoginGuard]},
   {path:"categories/update", component:CategoryUpdateComponent, canActivate:[LoginGuard]},
   {path:"categories/delete", component:CategoryDeleteComponent, canActivate:[LoginGuard]},
@@ -53,11 +53,11 @@ const routes: Routes = [
   //game
   {path:"games/list", component:GameListComponent},
   {path:"games/add", component:GameAddComponent, canActivate:[LoginGuard]},
-  {path:"games/list/add", component:GameAddComponent},
-  {path:"games/list/update/:id", component:GameUpdateComponent},
-  {path:"games/update", component:GameUpdateComponent},
-  {path:"games/list/delete/:id", component:GameDeleteComponent},
-  {path:"games/delete", component:GameUpdateComponent},
+  {path:"games/list/add", component:GameAddComponent, canActivate:[LoginGuard]},
+  {path:"games/list/update/:id", component:GameUpdateComponent, canActivate:[LoginGuard]},
+  {path:"games/update", component:GameUpdateComponent, canActivate:[LoginGuard]},
+  {path:"games/list/delete/:id", component:GameDeleteComponent, canActivate:[LoginGuard]},
+  {path:"games/delete", component:GameUpdateComponent, canActivate:[LoginGuard]},
 
   {path:"profil",component:ProfilComponent},
   {path:"about", component:AboutComponent},
@@ -68,8 +68,8 @@ const routes: Routes = [
   {path:"details/payment/:id",component:PaymentComponent},
 
   {path:"orders/list",component:OrderListComponent},
-  {path:"orders/list/update/:id",component:OrderUpdateComponent},
-  {path:"orders/list/delete/:id",component:OrderDeleteComponent},
+  {path:"orders/list/update/:id",component:OrderUpdateComponent, canActivate:[LoginGuard]},
+  {path:"orders/list/delete/:id",component:OrderDeleteComponent, canActivate:[LoginGuard]},
 ];
 
 @NgModule({

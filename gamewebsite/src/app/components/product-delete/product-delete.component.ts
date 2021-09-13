@@ -51,7 +51,6 @@ export class ProductDeleteComponent implements OnInit {
       let productModel = Object.assign({}, this.productDeleteForm.value);
       this.productService.delete(productModel).subscribe(response=>{
         this.toastrService.success(response.message,"Başarılı")
-        //this.backToList();
       }
       ,
       (responseError)=>

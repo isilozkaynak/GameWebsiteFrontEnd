@@ -9,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-order',
@@ -19,18 +20,16 @@ export class OrderComponent implements OnInit {
 
   orders: Order[] = [];
   dataLoaded = false;
-
   orderAddForm: FormGroup;
   order: Order;
   product: Product;
   userId: number;
   productId: number;
   orderId: number;
-
   user: User;
 
   apiUrl = "https://localhost:44365/api/";
-  //email = this.localStorageService.get('email');
+  email = this.localStorageService.get('email');
 
   constructor(
     private orderService: OrderService,
@@ -38,15 +37,14 @@ export class OrderComponent implements OnInit {
     private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    //private localStorageService: LocalStorageService,
+    private localStorageService: LocalStorageService,
     private userService: UserService,
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
     this.getOrders();
-
-    //this.getEmail();
+    this.getEmail();
     this.createOrderAddForm();
     this.activatedRoute.params.subscribe((params) => {
       this.getProductDetailsByProductId(params['productId']);
@@ -96,7 +94,6 @@ export class OrderComponent implements OnInit {
     }
   }
 
-  /*
   getEmail() {
     if (this.email) {
       this.userService.getByEmail(this.email).subscribe((response) => {
@@ -104,5 +101,5 @@ export class OrderComponent implements OnInit {
       });
     }
 
-  } */
+  }
 }

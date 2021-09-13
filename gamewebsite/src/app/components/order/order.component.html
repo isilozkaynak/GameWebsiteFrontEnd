@@ -3,13 +3,13 @@
       <div class="modal-content">
           <div class="modal-header">
               <h5 *ngIf="product" class="modal-title" id="exampleModalLabel">
-                  {{ product.productName }} {{ product.gameId }} | Satın Al <!--Kirala y erine Satın Al-->
+                  {{ product.productName }} {{ product.gameId }} | Satın Al
               </h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
               <div *ngIf="product" class="form-group row mb-2">
-                  <label for="example-date-input" class="col-4 col-form-label">Günlük tutar</label
+                  <label for="example-date-input" class="col-4 col-form-label">Tutar</label
         >
         <div class="col-8">
           <input
@@ -38,36 +38,17 @@
               </div>
 
               <div class="form-group row mb-2">
-                  <label for="rentDate" class="col-4 col-form-label">Başlangıç</label>
-
-            <!-- <div class="col-8">
-              <input
-                (change)="onChangeEvent($event)"
-                min="{{ getRentMinDate() }}"
-                [(ngModel)]="rentDate"
-                type="date"
-                class="form-control"
-                id="rentDate"
-                formControlName="rentDate"
-                placeholder="Bir gün seçiniz."
-              />
-            </div> -->
+                  <label for="orderDate" class="col-4 col-form-label">Tarih</label>
           </div>
 
-          <!--<div class="form-group row">
-            <label for="returnDate" class="col-4 col-form-label">Bitiş</label>
-                  <div class="col-8">
-                      <input min="{{ getReturnMinDate() }}" max="{{ getReturnMaxDate() }}" [(ngModel)]="returnDate" type="date" class="form-control" id="returnDate" formControlName="returnDate" placeholder="Bir gün seçiniz." />
-                  </div>
-              </div> -->
               </form>
           </div>
       </div>
-      <div class="form-group row mb-2 mt-2"> <!-- *ngIf="returnDate" silindi-->
+      <div class="form-group row mb-2 mt-2">
           <label for="example-date-input" class="col-4 col-form-label">
         Toplam tutar</label
       >
-      <div class="col-8"> <!--car-->
+      <div class="col-8">
         <input
           *ngIf="product"
           type="text"
@@ -87,7 +68,7 @@
         data-bs-dismiss="modal"
         type="button"
         class="btn btn-primary">
-        Ödemeye geç <!--addRental()-->
+        Ödemeye geç
       </button>
     </div>
   </div>
